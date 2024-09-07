@@ -50,7 +50,6 @@ void	ft_init_mlx(t_fdf *rol, char *mapname)
 	if (!rol->img)
 	{
 		ft_printf("Error creating new image\n");
-		mlx_terminate(rol->mlx);
 		ft_manage_err(BDRED INIT_ERR YELLOW IMG_ERR RESET);
 	}
 	ft_printf(ORANGE "Image " GREEN "created successfully...\n" RESET);
@@ -58,7 +57,6 @@ void	ft_init_mlx(t_fdf *rol, char *mapname)
 	{
 		ft_printf("Error adding image to window\n");
 		mlx_delete_image(rol->mlx, rol->img);
-		mlx_terminate(rol->mlx);
 		ft_manage_err(BDRED INIT_ERR YELLOW IMG_ERR RESET);
 	}
 	ft_printf(ORANGE "Image " GREEN "added to window successfully...\n" RESET);

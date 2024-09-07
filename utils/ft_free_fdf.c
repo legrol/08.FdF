@@ -24,10 +24,12 @@ void	ft_free_fdf(t_fdf *rol)
 {
 	if (!rol)
 		return ;
-	if (rol->img)
-		mlx_delete_image(rol->mlx, rol->img);
 	if (rol->map)
 		ft_free_map(rol->map);
+	if (rol->cam)
+		free(rol->cam);
+	if (rol->img)
+		mlx_delete_image(rol->mlx, rol->img);
 	if (rol->mlx)
 		mlx_terminate(rol->mlx);
 	free(rol);
