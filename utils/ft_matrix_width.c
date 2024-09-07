@@ -41,7 +41,7 @@
 static void	ft_manage_width(char *line)
 {
 	free(line);
-	ft_manage_err(MATRIX1_ERR);
+	ft_manage_err(BDRED INIT_ERR YELLOW MATRIX1_ERR RESET);
 }
 
 static void	ft_check_fd(int fd)
@@ -49,7 +49,7 @@ static void	ft_check_fd(int fd)
 	if (fd < 0)
 	{
 		perror("Error al abrir el archivo");
-		ft_manage_err(OPEN_ERR);
+		ft_manage_err(BDRED INIT_ERR YELLOW OPEN_ERR RESET);
 	}
 }
 
@@ -58,7 +58,7 @@ static void	ft_close_fd(int fd)
 	if (close(fd) < 0)
 	{
 		perror("Error al cerrar el archivo");
-		ft_manage_err(CLOSED_ERR);
+		ft_manage_err(BDRED INIT_ERR YELLOW CLOSED_ERR RESET);
 	}
 }
 
@@ -73,7 +73,7 @@ int	ft_matrix_width(char *map_file)
 	ft_check_fd(fd);
 	line = get_next_line(fd);
 	if (!line)
-		ft_manage_err(OPEN_ERR);
+		ft_manage_err(BDRED INIT_ERR YELLOW OPEN_ERR RESET);
 	width = ft_count_words(line, 32);
 	free(line);
 	while (1)

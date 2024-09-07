@@ -35,7 +35,7 @@ void	ft_control_map(char **argv, t_map *map)
 	if (!map || !map->superarray)
 	{
 		printf("Map or superarray is NULL\n");
-		ft_manage_err(OPEN_ERR);
+		ft_manage_err(BDRED INIT_ERR YELLOW OPEN_ERR RESET);
 	}
 	ft_printf(ORANGE "Map dimensions: " RESET GREEN "Width " RESET "%d, " \
 	GREEN"Height " RESET "%d\n", map->map_width, map->map_height);

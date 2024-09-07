@@ -26,7 +26,7 @@ int	ft_control_args(int argc, char **argv)
 {
 	if (argc != 2)
 	{
-		ft_manage_err(NUM_ARGV_ERR);
+		ft_manage_err(BDRED INIT_ERR YELLOW NUM_ARGV_ERR RESET);
 		exit (EXIT_FAILURE);
 	}
 	else if (!ft_ext_valid(argv[1]))

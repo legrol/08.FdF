@@ -110,16 +110,16 @@ t_map	*ft_init_map(char *argv)
 
 	fd = open(argv, O_RDONLY);
 	if (fd < 0)
-		ft_manage_err(OPEN_ERR);
+		ft_manage_err(BDRED INIT_ERR YELLOW OPEN_ERR RESET);
 	map = (t_map *)malloc(sizeof(t_map));
 	if (!map)
-		ft_manage_err(INIT_MAP_ERR);
+		ft_manage_err(BDRED INIT_ERR YELLOW INIT_MAP_ERR RESET);
 	map->map_height = 0;
 	map->map_width = 0;
 	ft_read_map_dimensions(map, fd);
 	map->superarray = (int ***)malloc(map->map_height * sizeof(int **));
 	if (!map->superarray)
-		ft_manage_err(MALLOC_ERR);
+		ft_manage_err(BDRED INIT_ERR YELLOW MALLOC_ERR RESET);
 	ft_fill_superarray(map, fd);
 	map->z_maximum = 0;
 	map->z_minimum = 0;

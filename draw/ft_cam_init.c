@@ -38,7 +38,7 @@ t_cam	*ft_cam_init(t_fdf *rol)
 
 	cam = (t_cam *)malloc(sizeof(t_cam));
 	if (!cam)
-		ft_manage_err(MLLC_CAM_ERR);
+		ft_manage_err(BDRED INIT_ERR YELLOW MLLC_CAM_ERR RESET);
 	cam->zoom = ft_get_min(WIDTH / rol->map->map_height / 2, \
 	HEIGHT / rol->map->map_width / 2);
 	cam->x_offset = rol->win_width / 2;

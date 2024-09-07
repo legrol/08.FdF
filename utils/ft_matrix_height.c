@@ -35,7 +35,7 @@ static void	ft_check_fd(int fd)
 	if (fd < 0)
 	{
 		perror("Error al abrir el archivo");
-		ft_manage_err(OPEN_ERR);
+		ft_manage_err(BDRED INIT_ERR YELLOW OPEN_ERR RESET);
 	}
 }
 
@@ -44,7 +44,7 @@ static void	ft_close_fd(int fd)
 	if (close(fd) < 0)
 	{
 		perror("Error al cerrar el archivo");
-		ft_manage_err(CLOSED_ERR);
+		ft_manage_err(BDRED INIT_ERR YELLOW CLOSED_ERR RESET);
 	}
 }
 
@@ -57,7 +57,7 @@ int	ft_matrix_height(char *map_file)
 	if (map_file == NULL)
 	{
 		perror("Nombre de archivo no válido");
-		ft_manage_err(OPEN_ERR);
+		ft_manage_err(BDRED INIT_ERR YELLOW OPEN_ERR RESET);
 	}
 	fd = open(map_file, O_RDONLY);
 	ft_check_fd(fd);

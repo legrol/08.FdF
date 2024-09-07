@@ -37,7 +37,7 @@ void	ft_complete_matrix(int **nb, char *line, int map_width)
 	{
 		nb[i] = malloc(sizeof(int) * 2);
 		if (!nb[i])
-			ft_manage_err(MALLOC_ERR);
+			ft_manage_err(BDRED INIT_ERR YELLOW MALLOC_ERR RESET);
 		nb[i][0] = ft_atoi(number[i]);
 		j = 0;
 		while (number[i][j] && number[i][j] != ',')
@@ -50,6 +50,6 @@ void	ft_complete_matrix(int **nb, char *line, int map_width)
 		i++;
 	}
 	if (i != map_width || number[i])
-		ft_manage_err(MATRIX2_ERR);
+		ft_manage_err(BDRED INIT_ERR YELLOW MATRIX2_ERR RESET);
 	free(number);
 }

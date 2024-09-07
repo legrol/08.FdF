@@ -43,7 +43,7 @@ void	ft_init_mlx(t_fdf *rol, char *mapname)
 	if (!rol->mlx)
 	{
 		ft_printf("Error initializing MLX\n");
-		ft_manage_err(MLX_ERR);
+		ft_manage_err(BDRED INIT_ERR YELLOW MLX_ERR RESET);
 	}
 	ft_printf(ORANGE "\nMLX " GREEN "initialized successfully...\n" RESET);
 	rol->img = mlx_new_image(rol->mlx, DEFAULT_WIDTH, DEFAULT_HEIGHT);
@@ -51,7 +51,7 @@ void	ft_init_mlx(t_fdf *rol, char *mapname)
 	{
 		ft_printf("Error creating new image\n");
 		mlx_terminate(rol->mlx);
-		ft_manage_err(IMG_ERR);
+		ft_manage_err(BDRED INIT_ERR YELLOW IMG_ERR RESET);
 	}
 	ft_printf(ORANGE "Image " GREEN "created successfully...\n" RESET);
 	if (mlx_image_to_window(rol->mlx, rol->img, 0, 0) == -1)
@@ -59,7 +59,7 @@ void	ft_init_mlx(t_fdf *rol, char *mapname)
 		ft_printf("Error adding image to window\n");
 		mlx_delete_image(rol->mlx, rol->img);
 		mlx_terminate(rol->mlx);
-		ft_manage_err(IMG_ERR);
+		ft_manage_err(BDRED INIT_ERR YELLOW IMG_ERR RESET);
 	}
 	ft_printf(ORANGE "Image " GREEN "added to window successfully...\n" RESET);
 }
@@ -72,7 +72,7 @@ static t_fdf	*ft_allocate_rol(void)
 	if (!rol)
 	{
 		ft_printf("Error allocating memory for rol\n");
-		ft_manage_err(MALLOC_ERR);
+		ft_manage_err(BDRED INIT_ERR YELLOW MALLOC_ERR RESET);
 	}
 	return (rol);
 }
@@ -86,14 +86,14 @@ static char	*ft_create_mapname(const char *filepath)
 	if (!filename)
 	{
 		ft_printf("Error allocating memory for filename\n");
-		ft_manage_err(MALLOC_ERR);
+		ft_manage_err(BDRED INIT_ERR YELLOW MALLOC_ERR RESET);
 	}
 	mapname = ft_strjoin("Fdf - ", filename);
 	free(filename);
 	if (!mapname)
 	{
 		ft_printf("Error allocating memory for mapname\n");
-		ft_manage_err(MALLOC_ERR);
+		ft_manage_err(BDRED INIT_ERR YELLOW MALLOC_ERR RESET);
 	}
 	return (mapname);
 }
