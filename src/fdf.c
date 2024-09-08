@@ -6,7 +6,7 @@
 /*   By: rdel-olm <rdel-olm@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/23 11:33:21 by rdel-olm          #+#    #+#             */
-/*   Updated: 2024/09/05 22:38:43 by rdel-olm         ###   ########.fr       */
+/*   Updated: 2024/09/08 18:56:15 by rdel-olm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,5 +39,6 @@ int	main(int argc, char **argv)
 	mlx_terminate(rol->mlx);
 	ft_free_map(map);
 	ft_free_fdf(rol);
+	//pdte
 	return (0);
 }
