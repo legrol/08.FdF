@@ -6,7 +6,7 @@
 /*   By: rdel-olm <rdel-olm@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/23 11:36:56 by rdel-olm          #+#    #+#             */
-/*   Updated: 2024/09/05 22:38:33 by rdel-olm         ###   ########.fr       */
+/*   Updated: 2024/09/08 23:19:35 by rdel-olm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -116,6 +116,16 @@ double	ft_reset_angles(double angle);
 void	ft_manage_err(const char *err);
 
 // ============================================================================
+// Functions to release
+// ============================================================================
+void	ft_cleanup(t_map *map, char *line, char **split_line, int row);
+void	ft_free_inner(int **array, int length);
+void	ft_free_fdf(t_fdf *rol);
+void	ft_free_map(t_map *map);
+void	ft_free_split(char **split);
+void	ft_free_superarray(t_map *map, int rows);
+
+// ============================================================================
 // Initialization functions
 // ============================================================================
 t_map	*ft_init_map(char *argv);
@@ -127,8 +137,6 @@ t_fdf	*ft_init(const char *filepath);
 void	ft_collect_z_minmax(t_map *map);
 void	ft_complete_matrix(int **nb, char *line, int map_width);
 int		ft_count_words(char *s, char c);
-void	ft_free_fdf(t_fdf *rol);
-void	ft_free_map(t_map *map);
 int		ft_get_min(int nbr1, int nbr2);
 int		ft_manage_columns(int map_columns, char *read_line, char *map_line);
 int		ft_matrix_height(char *map_file);

@@ -6,7 +6,7 @@
 /*   By: rdel-olm <rdel-olm@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/24 21:18:43 by rdel-olm          #+#    #+#             */
-/*   Updated: 2024/09/05 21:58:27 by rdel-olm         ###   ########.fr       */
+/*   Updated: 2024/09/08 20:37:25 by rdel-olm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,8 @@ void	ft_init_mlx(t_fdf *rol, char *mapname)
 		ft_manage_err(BDRED INIT_ERR YELLOW IMG_ERR RESET);
 	}
 	ft_printf(ORANGE "Image " GREEN "created successfully...\n" RESET);
+	rol->win_height = DEFAULT_HEIGHT;
+	rol->win_width = DEFAULT_WIDTH;
 	if (mlx_image_to_window(rol->mlx, rol->img, 0, 0) == -1)
 	{
 		ft_printf("Error adding image to window\n");
@@ -84,6 +86,7 @@ static char	*ft_create_mapname(const char *filepath)
 	if (!filename)
 	{
 		ft_printf("Error allocating memory for filename\n");
+		free(filename);
 		ft_manage_err(BDRED INIT_ERR YELLOW MALLOC_ERR RESET);
 	}
 	mapname = ft_strjoin("Fdf - ", filename);

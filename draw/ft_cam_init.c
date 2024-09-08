@@ -6,7 +6,7 @@
 /*   By: rdel-olm <rdel-olm@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/03 09:25:24 by rdel-olm          #+#    #+#             */
-/*   Updated: 2024/09/05 22:32:29 by rdel-olm         ###   ########.fr       */
+/*   Updated: 2024/09/08 20:34:47 by rdel-olm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,19 +19,6 @@
  * 
  */
 
-// 	cam->zoom = ft_get_min(WIDTH / rol->map->map_height / 2, \
-// 	HEIGHT / rol->map->map_width / 2);
-// 	cam->x_ang = -0.61547297;
-// 	cam->y_ang = -0.523599;
-// 	cam->z_ang = 0.61547297;
-// 	cam->x_offset = 0;
-// 	cam->y_offset = 0;
-
-//cam->zoom = 20;
-// cam->x_ang = 0.0;
-// cam->y_ang = 0.0;
-// cam->z_ang = 0.0;
-
 t_cam	*ft_cam_init(t_fdf *rol)
 {
 	t_cam	*cam;
@@ -39,8 +26,8 @@ t_cam	*ft_cam_init(t_fdf *rol)
 	cam = (t_cam *)malloc(sizeof(t_cam));
 	if (!cam)
 		ft_manage_err(BDRED INIT_ERR YELLOW MLLC_CAM_ERR RESET);
-	cam->zoom = ft_get_min(WIDTH / rol->map->map_height / 2, \
-	HEIGHT / rol->map->map_width / 2);
+	cam->zoom = ft_get_min(DEFAULT_WIDTH / rol->map->map_width / 2, \
+	DEFAULT_HEIGHT / rol->map->map_height / 2);
 	cam->x_offset = rol->win_width / 2;
 	cam->y_offset = rol->win_height / 2;
 	cam->z_height = 1;

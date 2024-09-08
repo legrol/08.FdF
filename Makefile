@@ -45,6 +45,7 @@ SRC_DIR				= ./src
 CONTROL_DIR			= ./control
 DRAW_DIR			= ./draw
 ERRORS_DIR			= ./errors
+FREE_DIR			= ./free
 INIT_DIR			= ./init
 UTILS_DIR			= ./utils
 LIBRARIES			= ./libs
@@ -107,9 +108,7 @@ UTL					= ${UTILS_DIR}/ft_collect_z_minmax.c \
 						${UTILS_DIR}/ft_count_words.c \
 						${UTILS_DIR}/ft_get_min.c \
 						${UTILS_DIR}/ft_matrix_height.c \
- 						${UTILS_DIR}/ft_matrix_width.c \
-						${UTILS_DIR}/ft_free_map.c \
-						${UTILS_DIR}/ft_free_fdf.c 
+ 						${UTILS_DIR}/ft_matrix_width.c
 
 CTL					= ${CONTROL_DIR}/ft_check_commas.c \
 						${CONTROL_DIR}/ft_control_args.c \
@@ -124,6 +123,13 @@ DRW					= ${DRAW_DIR}/ft_bresenham_step.c \
 						${DRAW_DIR}/ft_project_iso.c \
 						${DRAW_DIR}/ft_reset_angles.c
 
+FRE					= ${FREE_DIR}/ft_cleanup.c \
+						${FREE_DIR}/ft_free_fdf.c \
+						${FREE_DIR}/ft_free_inner.c \
+						${FREE_DIR}/ft_free_map.c \
+						${FREE_DIR}/ft_free_split.c \
+						${FREE_DIR}/ft_free_superarray.c
+
 OBJ_SRC				= $(patsubst ${SRC_DIR}/%.c, ${OBJ_DIR}/%.o, ${SRC})
 OBJ_GNL				= $(patsubst ${LIBRARIES}/${GNL_DIR}/%.c, ${OBJ_DIR}/%.o, \
 						${GNL})
@@ -132,6 +138,7 @@ OBJ_INT				= $(patsubst ${INIT_DIR}/%.c, ${OBJ_DIR}/%.o, ${INT})
 OBJ_UTL				= $(patsubst ${UTILS_DIR}/%.c, ${OBJ_DIR}/%.o, ${UTL})
 OBJ_CTL				= $(patsubst ${CONTROL_DIR}/%.c, ${OBJ_DIR}/%.o, ${CTL})
 OBJ_DRW				= $(patsubst ${DRAW_DIR}/%.c, ${OBJ_DIR}/%.o, ${DRW})
+OBJ_FRE				= $(patsubst ${FRE_DIR}/%.c, ${OBJ_DIR}/%.o, ${FRE})
 
 # ══ Sources Bonus ═══════════════════════════════════════════════════════════ #
 #    -------------                                                             #
@@ -152,11 +159,11 @@ all: ${NAME}
 
 ${NAME}: ftlibft ftprintf ftexamft ${LIBMLX42_A} ${OBJ_SRC} ${OBJ_GNL} \
 									${OBJ_ERR} ${OBJ_INT} ${OBJ_UTL} \
-									${OBJ_CTL} ${OBJ_DRW}
+									${OBJ_CTL} ${OBJ_DRW} ${OBJ_FRE}
 	@echo "$(YELLOW)Compiling root ...$(DEF_COLOR)"
 	@${CC} ${CFLAGS} ${IFLAGS} -o ${NAME} ${OBJ_SRC} ${OBJ_GNL} ${OBJ_ERR} \
 									${OBJ_INT} ${OBJ_UTL} ${OBJ_CTL} \
-									${OBJ_DRW} ${LFLAGS}
+									${OBJ_DRW} ${OBJ_FRE} ${LFLAGS}
 	@echo "$(GREEN) $(NAME) all created ✓$(DEF_COLOR)"
 
 ${OBJ_DIR}/%.o: ${SRC_DIR}/%.c
@@ -184,6 +191,10 @@ ${OBJ_DIR}/%.o: ${CONTROL_DIR}/%.c
 	@$(CC) ${CFLAGS} ${IFLAGS} -c $< -o $@
 
 ${OBJ_DIR}/%.o: ${DRAW_DIR}/%.c
+	@${MKD} $(dir $@)
+	@$(CC) ${CFLAGS} ${IFLAGS} -c $< -o $@
+
+${OBJ_DIR}/%.o: ${FREE_DIR}/%.c
 	@${MKD} $(dir $@)
 	@$(CC) ${CFLAGS} ${IFLAGS} -c $< -o $@
 

@@ -1,43 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_free_map.c                                      :+:      :+:    :+:   */
+/*   ft_free_superarray.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rdel-olm <rdel-olm@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/05 22:12:21 by rdel-olm          #+#    #+#             */
-/*   Updated: 2024/09/05 22:12:44 by rdel-olm         ###   ########.fr       */
+/*   Created: 2024/09/08 22:17:53 by rdel-olm          #+#    #+#             */
+/*   Updated: 2024/09/08 23:33:17 by rdel-olm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/fdf.h"
 
 /**
- * The function "ft_free_map" release the map structure.
+ * The function "ft_free_superarray" to release triple pointer superray.
  * 
- * @param t_map *map 		structure to be released.
+ * @param t_map *map    map to read.
+ * @param int rows      The index up to which rows in the superarray have been 
+ * 						allocated and may need cleaning. 
+ *                      This allows the function to free all rows up to 'row' 
+ * 						to handle partial constructions of the superarray.
  * 
  */
 
-void	ft_free_map(t_map *map)
+void	ft_free_superarray(t_map *map, int rows)
 {
-	int	i;
-	int	j;
+	int i, j;
 
-	if (!map)
-		return ;
-	i = 0;
-	while (i < map->map_height)
+	for (i = 0; i < rows; i++)
 	{
-		j = 0;
-		while (j < map->map_width)
-		{
+		for (j = 0; j < map->map_width; j++)
 			free(map->superarray[i][j]);
-			j++;
-		}
 		free(map->superarray[i]);
-		i++;
 	}
 	free(map->superarray);
-	free(map);
 }

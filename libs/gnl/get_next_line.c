@@ -46,10 +46,13 @@ static char	*manage_readed_line(char	*treat_line)
 	while (treat_line[i] != '\n' && treat_line[i] != '\0')
 		i++;
 	if (treat_line[i] == 0 || treat_line[1] == 0)
+	{
+		free(treat_line);
 		return (NULL);
+	}
 	new_buffer_print = ft_substr1(treat_line, i + 1, ft_strlen1(treat_line) \
 	- i);
-	if (*new_buffer_print == 0)
+	if (*new_buffer_print == 0 || *new_buffer_print == '\0')
 	{
 		free(new_buffer_print);
 		new_buffer_print = NULL;
@@ -67,9 +70,9 @@ static char	*read_fill_line(int fd, char *buffer_readed, char *buffer_print)
 	while (bytes_readed > 0)
 	{
 		bytes_readed = read(fd, buffer_readed, BUFFER_SIZE);
-		if (bytes_readed < 0)
-		{
+		if (bytes_readed < 0){
 			free(buffer_readed);
+			free(buffer_print); 
 			return (NULL);
 		}
 		else if (bytes_readed == 0)
