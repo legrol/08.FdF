@@ -6,7 +6,7 @@
 /*   By: rdel-olm <rdel-olm@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/31 20:50:57 by rdel-olm          #+#    #+#             */
-/*   Updated: 2024/09/08 23:34:59 by rdel-olm         ###   ########.fr       */
+/*   Updated: 2024/09/09 15:24:23 by rdel-olm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,7 +88,7 @@ static void	ft_fill_row(t_map *map, char **split_line, int row)
 	int	j;
 
 	j = 0;
-	while (j < map->map_width)
+	while (j < map->map_width && split_line[j] != NULL)
 	{
 		map->superarray[row][j] = (int *)malloc(sizeof(int));
 		if (!map->superarray[row][j])

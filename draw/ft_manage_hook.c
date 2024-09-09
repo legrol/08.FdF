@@ -6,7 +6,7 @@
 /*   By: rdel-olm <rdel-olm@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/03 14:39:49 by rdel-olm          #+#    #+#             */
-/*   Updated: 2024/09/09 14:04:12 by rdel-olm         ###   ########.fr       */
+/*   Updated: 2024/09/09 14:23:28 by rdel-olm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,6 +61,27 @@
  * 
  */
 
+static void ft_free_resources(t_fdf *rol)
+{
+    if (!rol) 
+		return ;
+    if (rol->map) 
+	{
+        ft_free_map(rol->map);
+        rol->map = NULL;
+    }
+    if (rol->cam) 
+	{
+        free(rol->cam);
+        rol->cam = NULL;
+    }
+    if (rol->img) 
+	{
+        mlx_delete_image(rol->mlx, rol->img);
+        rol->img = NULL;
+    }
+}
+
 static void ft_handle_mouse_move(int x, int y, t_fdf *rol)
 {
     if (rol->mouse->button == MOUSE_CLICK_RIGHT) {
@@ -82,18 +103,31 @@ static void ft_handle_mouse_move(int x, int y, t_fdf *rol)
 
 static void ft_key_hook(mlx_key_data_t keydata, void *param)
 {
-    t_fdf *rol = (t_fdf *)param;
-    if (keydata.action == MLX_PRESS && keydata.key == MLX_KEY_ESCAPE)
-        mlx_close_window(rol->mlx);
+    t_fdf *rol;
+	
+	rol = (t_fdf *)param;
+ 	if (rol && keydata.action == MLX_PRESS && keydata.key == MLX_KEY_ESCAPE) {
+        if (rol->mlx) {
+            mlx_close_window(rol->mlx);
+        }
+    }
 }
-
 
 static void ft_close_hook(void *param)
 {
-    t_fdf *rol = (t_fdf *)param;
-    mlx_close_window(rol->mlx);
+    t_fdf *rol;
+	
+	rol = (t_fdf *)param;
+    if (rol) {
+        if (rol->mlx) {
+            mlx_close_window(rol->mlx);
+            rol->mlx = NULL; 
+        }
+		ft_free_resources(rol);
+		free(rol);
+		rol = NULL;
+    }
 }
-
 
 static void ft_zoom(int button, t_fdf *rol)
 {
@@ -109,7 +143,6 @@ static void ft_zoom(int button, t_fdf *rol)
     }
 }
 
-
 // static void ft_move_z(int x, int y, t_fdf *rol)
 // {
 //     if (x < (DEFAULT_WIDTH / 2) + rol->cam->x_offset)
@@ -119,7 +152,6 @@ static void ft_zoom(int button, t_fdf *rol)
 
 //     ft_draw(rol->map, rol);
 // }
-
 
 static void ft_mouse_hook(mouse_key_t button, action_t action, modifier_key_t mods, void *param)
 {

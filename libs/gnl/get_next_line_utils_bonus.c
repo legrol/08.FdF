@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line_utils_bonus.c                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rdel-olm <rdel-olm@student.42malaga.com>   #+#  +:+       +#+        */
+/*   By: rdel-olm <rdel-olm@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024-05-27 11:32:35 by rdel-olm          #+#    #+#             */
-/*   Updated: 2024-05-27 11:32:35 by rdel-olm         ###   ########.fr       */
+/*   Created: 2024/05/27 11:32:35 by rdel-olm          #+#    #+#             */
+/*   Updated: 2024/09/09 15:11:50 by rdel-olm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
