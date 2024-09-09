@@ -6,7 +6,7 @@
 /*   By: rdel-olm <rdel-olm@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/24 21:18:43 by rdel-olm          #+#    #+#             */
-/*   Updated: 2024/09/09 14:24:08 by rdel-olm         ###   ########.fr       */
+/*   Updated: 2024/09/09 20:55:39 by rdel-olm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -110,6 +110,12 @@ t_fdf	*ft_init(const char *filepath)
 	ft_init_mlx(rol, mapname);
 	rol->map = NULL;
 	rol->cam = NULL;
+	rol->mouse = (t_mouse *) malloc(sizeof(t_mouse));
+	if (!rol->mouse)
+	{
+		ft_printf("Error allocating memory for mouse\n");
+		ft_manage_err(BDRED INIT_ERR YELLOW MALLOC_ERR RESET);
+	}
 	free(mapname);
 	return (rol);
 }
