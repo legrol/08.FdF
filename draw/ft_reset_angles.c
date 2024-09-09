@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_reset_angles.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rdel-olm <rdel-olm@student.42malaga.com>   #+#  +:+       +#+        */
+/*   By: rdel-olm <rdel-olm@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024-09-04 10:53:50 by rdel-olm          #+#    #+#             */
-/*   Updated: 2024-09-04 10:53:50 by rdel-olm         ###   ########.fr       */
+/*   Created: 2024/09/04 10:53:50 by rdel-olm          #+#    #+#             */
+/*   Updated: 2024/09/09 14:02:53 by rdel-olm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,14 +20,14 @@
  * 
  */
 
-double	ft_reset_angles(double angle)
+double	ft_reset_angles(double *angle)
 {
 	double	two_pi;
 
 	two_pi = 2.00 * M_PI;
-	while (angle >= two_pi)
-		angle -= two_pi;
-	while (angle < 0)
-		angle += two_pi;
-	return (angle);
+	while (*angle >= two_pi)
+		*angle -= two_pi;
+	while (*angle < 0)
+		*angle += two_pi;
+	return (*angle);
 }

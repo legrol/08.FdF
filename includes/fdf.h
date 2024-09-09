@@ -6,7 +6,7 @@
 /*   By: rdel-olm <rdel-olm@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/23 11:36:56 by rdel-olm          #+#    #+#             */
-/*   Updated: 2024/09/08 23:19:35 by rdel-olm         ###   ########.fr       */
+/*   Updated: 2024/09/09 13:58:20 by rdel-olm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,6 +64,17 @@ typedef struct s_cam
 	int				iso;
 }					t_cam;
 
+typedef struct s_mouse
+{
+	int				button;
+	int				x;
+	int				y;
+	int				current_x;
+	int				current_y;
+	int				prev_x;
+	int				prev_y;
+}					t_mouse;
+
 typedef struct s_point
 {
 	int				x;
@@ -87,6 +98,7 @@ typedef struct s_fdf
 	void			*img;
 	t_map			*map;
 	t_cam			*cam;
+	t_mouse			*mouse;
 	int				win_width;
 	int				win_height;
 }					t_fdf;
@@ -108,7 +120,7 @@ t_cam	*ft_cam_init(t_fdf	*rol);
 void	ft_draw(t_map *map, t_fdf *rol);
 void	ft_manage_hook(t_fdf *rol);
 t_point	ft_project_iso(int x, int y, int z, t_fdf *rol);
-double	ft_reset_angles(double angle);
+double	ft_reset_angles(double *angle);
 
 // ============================================================================
 // Management errors

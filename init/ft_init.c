@@ -6,7 +6,7 @@
 /*   By: rdel-olm <rdel-olm@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/24 21:18:43 by rdel-olm          #+#    #+#             */
-/*   Updated: 2024/09/08 20:37:25 by rdel-olm         ###   ########.fr       */
+/*   Updated: 2024/09/09 11:16:34 by rdel-olm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,6 +72,7 @@ static t_fdf	*ft_allocate_rol(void)
 	if (!rol)
 	{
 		ft_printf("Error allocating memory for rol\n");
+		ft_free_fdf(rol);
 		ft_manage_err(BDRED INIT_ERR YELLOW MALLOC_ERR RESET);
 	}
 	return (rol);
