@@ -23,5 +23,6 @@
 void	ft_manage_err(const char *err)
 {
 	ft_printf("Error: %s\n", err);
+	puts(mlx_strerror(mlx_errno));
 	exit (EXIT_FAILURE);
 }

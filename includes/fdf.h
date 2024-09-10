@@ -45,51 +45,51 @@
 // ============================================================================
 typedef struct s_line_params
 {
-	int				delta[2];
-	int				sign[2];
-	int				error;
+	int32_t			delta[2];
+	int32_t			sign[2];
+	int32_t			error;
 }					t_line_params;
 
 typedef struct s_cam
 {
-	int				zoom;
+	int32_t			zoom;
 	double			x_ang;
 	double			y_ang;
 	double			z_ang;
 	float			z_height;
-	int				x_offset;
-	int				y_offset;
-	int				prev_x;
-	int				prev_y;
-	int				iso;
+	int32_t			x_offset;
+	int32_t			y_offset;
+	int32_t			prev_x;
+	int32_t			prev_y;
+	int32_t			iso;
 }					t_cam;
 
 typedef struct s_mouse
 {
-	int				button;
-	int				x;
-	int				y;
-	int				current_x;
-	int				current_y;
-	int				prev_x;
-	int				prev_y;
+	int32_t			button;
+	int32_t			x;
+	int32_t			y;
+	int32_t			current_x;
+	int32_t			current_y;
+	int32_t			prev_x;
+	int32_t			prev_y;
 }					t_mouse;
 
-typedef struct s_point
+typedef struct s_point32_t
 {
-	int				x;
-	int				y;
-	int				z;
+	int32_t			x;
+	int32_t			y;
+	int32_t			z;
 	unsigned long	color;
 }					t_point;
 
 typedef struct s_map
 {
-	int				map_width;
-	int				map_height;
-	int				***superarray;
-	int				z_minimum;
-	int				z_maximum;
+	int32_t			map_width;
+	int32_t			map_height;
+	int32_t			***superarray;
+	int32_t			z_minimum;
+	int32_t			z_maximum;
 }					t_map;
 
 typedef struct s_fdf
@@ -99,59 +99,61 @@ typedef struct s_fdf
 	t_map			*map;
 	t_cam			*cam;
 	t_mouse			*mouse;
-	int				win_width;
-	int				win_height;
+	int32_t			win_width;
+	int32_t			win_height;
 }					t_fdf;
 
 // ============================================================================
 // Several controls
 // ============================================================================
-int		ft_check_commas(char *str, t_point *node);
-int		ft_control_args(int argc, char **argv);
-char	*ft_control_fd(char *argv);
-void	ft_control_map(char **argv, t_map *map);
-int		ft_ext_valid(char *map_name);
+int32_t		ft_check_commas(char *str, t_point *node);
+int32_t		ft_control_args(int32_t argc, char **argv);
+char		*ft_control_fd(char *argv);
+void		ft_control_map(char **argv, t_map *map);
+int32_t		ft_ext_valid(char *map_name);
 
 // ============================================================================
 // Drawing functions
 // ============================================================================
-void	ft_bresenham_step(int *start, int *error, int delta[2], int sign[2]);
-t_cam	*ft_cam_init(t_fdf	*rol);
-void	ft_draw(t_map *map, t_fdf *rol);
-void	ft_manage_hook(t_fdf *rol);
-t_point	ft_project_iso(int x, int y, int z, t_fdf *rol);
-double	ft_reset_angles(double *angle);
+void		ft_bresenham_step(int32_t *start, int32_t *error, int32_t \
+delta[2], int32_t sign[2]);
+t_cam		*ft_cam_init(t_fdf	*rol);
+void		ft_draw(t_map *map, t_fdf *rol);
+void		ft_manage_hook(t_fdf *rol);
+t_point		ft_project_iso(int32_t x, int32_t y, int32_t z, t_fdf *rol);
+double		ft_reset_angles(double *angle);
 
 // ============================================================================
 // Management errors
 // ============================================================================
-void	ft_manage_err(const char *err);
+void		ft_manage_err(const char *err);
 
 // ============================================================================
 // Functions to release
 // ============================================================================
-void	ft_cleanup(t_map *map, char *line, char **split_line, int row);
-void	ft_free_inner(int **array, int length);
-void	ft_free_fdf(t_fdf *rol);
-void	ft_free_map(t_map *map);
-void	ft_free_split(char **split);
-void	ft_free_superarray(t_map *map, int rows);
+void		ft_cleanup(t_map *map, char *line, char **split_line, int32_t row);
+void		ft_free_inner(int32_t **array, int32_t length);
+void		ft_free_fdf(t_fdf *rol);
+void		ft_free_map(t_map *map);
+void		ft_free_split(char **split);
+void		ft_free_superarray(t_map *map, int32_t rows);
 
 // ============================================================================
 // Initialization functions
 // ============================================================================
-t_map	*ft_init_map(char *argv);
-t_fdf	*ft_init(const char *filepath);
+t_map		*ft_init_map(char *argv);
+t_fdf		*ft_init(const char *filepath);
 
 // ============================================================================
 // Several functions
 // ============================================================================
-void	ft_collect_z_minmax(t_map *map);
-void	ft_complete_matrix(int **nb, char *line, int map_width);
-int		ft_count_words(char *s, char c);
-int		ft_get_min(int nbr1, int nbr2);
-int		ft_manage_columns(int map_columns, char *read_line, char *map_line);
-int		ft_matrix_height(char *map_file);
-int		ft_matrix_width(char *map_file);
+void		ft_collect_z_minmax(t_map *map);
+void		ft_complete_matrix(int32_t **nb, char *line, int32_t map_width);
+int32_t		ft_count_words(char *s, char c);
+int32_t		ft_get_min(int32_t nbr1, int32_t nbr2);
+int32_t		ft_manage_columns(int32_t map_columns, char *read_line, \
+char *map_line);
+int32_t		ft_matrix_height(char *map_file);
+int32_t		ft_matrix_width(char *map_file);
 
 #endif

@@ -36,6 +36,8 @@ t_point	ft_project_iso(int x, int y, int z, t_fdf *rol)
 
 	point.x = (x - y) * cos(0.523599);
 	point.y = (x + y) * sin(0.523599) - z;
+	// point.x = 50 * point.x + rol->cam->x_offset;
+	// point.y = 50 * point.y + rol->cam->y_offset;
 	point.x = point.x * rol->cam->zoom + rol->cam->x_offset;
 	point.y = point.y * rol->cam->zoom + rol->cam->y_offset;
 	return (point);

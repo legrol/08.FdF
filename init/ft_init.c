@@ -39,6 +39,8 @@
 
 void	ft_init_mlx(t_fdf *rol, char *mapname)
 {
+	rol->win_height = DEFAULT_HEIGHT;
+	rol->win_width = DEFAULT_WIDTH;
 	rol->mlx = mlx_init(DEFAULT_WIDTH, DEFAULT_HEIGHT, mapname, true);
 	if (!rol->mlx)
 	{
@@ -49,16 +51,15 @@ void	ft_init_mlx(t_fdf *rol, char *mapname)
 	rol->img = mlx_new_image(rol->mlx, DEFAULT_WIDTH, DEFAULT_HEIGHT);
 	if (!rol->img)
 	{
+		mlx_close_window(rol->mlx);
 		ft_printf("Error creating new image\n");
 		ft_manage_err(BDRED INIT_ERR YELLOW IMG_ERR RESET);
 	}
 	ft_printf(ORANGE "Image " GREEN "created successfully...\n" RESET);
-	rol->win_height = DEFAULT_HEIGHT;
-	rol->win_width = DEFAULT_WIDTH;
 	if (mlx_image_to_window(rol->mlx, rol->img, 0, 0) == -1)
 	{
+		mlx_close_window(rol->mlx);
 		ft_printf("Error adding image to window\n");
-		mlx_delete_image(rol->mlx, rol->img);
 		ft_manage_err(BDRED INIT_ERR YELLOW IMG_ERR RESET);
 	}
 	ft_printf(ORANGE "Image " GREEN "added to window successfully...\n" RESET);

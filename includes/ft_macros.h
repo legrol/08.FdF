@@ -13,8 +13,8 @@
 #ifndef FT_MACROS_H
 # define FT_MACROS_H
 
-# define DEFAULT_WIDTH			1080
-# define DEFAULT_HEIGHT			720
+# define DEFAULT_WIDTH			1600
+# define DEFAULT_HEIGHT			900
 # define WIDTH					1920
 # define HEIGHT					1080
 # define DEFAULT_MENU_WIDTH		250

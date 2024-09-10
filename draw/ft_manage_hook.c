@@ -61,86 +61,103 @@
  * 
  */
 
-static void ft_free_resources(t_fdf *rol)
+static void	ft_free_resources(t_fdf *rol)
 {
-    if (!rol) 
+	if (!rol)
 		return ;
-    if (rol->map) 
+	if (rol->map)
 	{
-        ft_free_map(rol->map);
-        rol->map = NULL;
-    }
-    if (rol->cam) 
+		ft_free_map(rol->map);
+		rol->map = NULL;
+	}
+	if (rol->cam)
 	{
-        free(rol->cam);
-        rol->cam = NULL;
-    }
-    if (rol->img) 
+		free(rol->cam);
+		rol->cam = NULL;
+	}
+	if (rol->img)
 	{
-        mlx_delete_image(rol->mlx, rol->img);
-        rol->img = NULL;
-    }
+		mlx_delete_image(rol->mlx, rol->img);
+		rol->img = NULL;
+	}
 }
 
-static void ft_handle_mouse_move(int x, int y, t_fdf *rol)
+static void	ft_handle_mouse_move(int x, int y, t_fdf *rol)
 {
-    if (rol->mouse->button == MOUSE_CLICK_RIGHT) {
-        rol->cam->x_ang += (y - rol->mouse->prev_y) * 0.002;
-        rol->cam->y_ang += (x - rol->mouse->prev_x) * 0.002;
-        ft_reset_angles(&rol->cam->x_ang);
-        ft_reset_angles(&rol->cam->y_ang);
-        rol->mouse->prev_x = x;
-        rol->mouse->prev_y = y;
-        ft_draw(rol->map, rol);
-    } else if (rol->mouse->button == MOUSE_CLICK_LEFT) {
-        rol->cam->x_offset += (x - rol->mouse->prev_x);
-        rol->cam->y_offset += (y - rol->mouse->prev_y);
-        rol->mouse->prev_x = x;
-        rol->mouse->prev_y = y;
-        ft_draw(rol->map, rol);
-    }
+	if (rol->mouse->button == MOUSE_CLICK_RIGHT)
+	{
+		rol->cam->x_ang += (y - rol->mouse->prev_y) * 0.002;
+		rol->cam->y_ang += (x - rol->mouse->prev_x) * 0.002;
+		ft_reset_angles(&rol->cam->x_ang);
+		ft_reset_angles(&rol->cam->y_ang);
+		rol->mouse->prev_x = x;
+		rol->mouse->prev_y = y;
+		ft_draw(rol->map, rol);
+	}
+	else if (rol->mouse->button == MOUSE_CLICK_LEFT)
+	{
+		rol->cam->x_offset += (x - rol->mouse->prev_x);
+		rol->cam->y_offset += (y - rol->mouse->prev_y);
+		rol->mouse->prev_x = x;
+		rol->mouse->prev_y = y;
+		ft_draw(rol->map, rol);
+	}
 }
 
-static void ft_key_hook(mlx_key_data_t keydata, void *param)
+// static void	ft_key_hook(mlx_key_data_t keydata, void *param)
+// {
+// 	t_fdf	*rol;
+
+// 	rol = (t_fdf *)param;
+// 	if (rol && keydata.action == MLX_PRESS && keydata.key == MLX_KEY_ESCAPE)
+// 	{
+// 		if (rol->mlx)
+// 		{
+// 			mlx_close_window(rol->mlx);
+// 		}
+// 	}
+// }
+
+static void	ft_key_hook(mlx_key_data_t keydata, void *param)
 {
-    t_fdf *rol;
-	
+	t_fdf	*rol;
+
 	rol = (t_fdf *)param;
- 	if (rol && keydata.action == MLX_PRESS && keydata.key == MLX_KEY_ESCAPE) {
-        if (rol->mlx) {
-            mlx_close_window(rol->mlx);
-        }
-    }
+	if (rol->mlx && keydata.action == MLX_PRESS && keydata.key == \
+	MLX_KEY_ESCAPE)
+		mlx_close_window(rol->mlx);	
 }
 
-static void ft_close_hook(void *param)
+static void	ft_close_hook(void *param)
 {
-    t_fdf *rol;
-	
+	t_fdf	*rol;
+
 	rol = (t_fdf *)param;
-    if (rol) {
-        if (rol->mlx) {
-            mlx_close_window(rol->mlx);
-            rol->mlx = NULL; 
-        }
+	if (rol)
+	{
+		if (rol->mlx)
+		{
+			mlx_close_window(rol->mlx);
+			rol->mlx = NULL;
+		}
 		ft_free_resources(rol);
 		free(rol);
 		rol = NULL;
-    }
+	}
 }
 
-static void ft_zoom(int button, t_fdf *rol)
+static void	ft_zoom(int button, t_fdf *rol)
 {
-    if (button == 4 || button == 5)
-    {
-        if (button == 4) rol->cam->zoom += 2;
-        else if (button == 5) rol->cam->zoom -= 2;
-
-        if (rol->cam->zoom < 1)
-            rol->cam->zoom = 1;
-
-        ft_draw(rol->map, rol);
-    }
+	if (button == 4 || button == 5)
+	{
+		if (button == 4)
+			rol->cam->zoom += 2;
+		else if (button == 5)
+			rol->cam->zoom -= 2;
+		if (rol->cam->zoom < 1)
+			rol->cam->zoom = 1;
+		ft_draw(rol->map, rol);
+	}
 }
 
 // static void ft_move_z(int x, int y, t_fdf *rol)
@@ -153,40 +170,45 @@ static void ft_zoom(int button, t_fdf *rol)
 //     ft_draw(rol->map, rol);
 // }
 
-static void ft_mouse_hook(mouse_key_t button, action_t action, modifier_key_t mods, void *param)
+static void ft_mouse_hook(mouse_key_t button, action_t action, modifier_key_t \
+mods, void *param)
 {
-    t_fdf *rol;
-	
+	t_fdf	*rol;
+	int		x;
+	int		y;
+
 	(void) mods;
 	rol = (t_fdf *)param;
-    int x = rol->mouse->current_x;
-    int y = rol->mouse->current_y;
+	x = rol->mouse->current_x;
+	y = rol->mouse->current_y;
 
-    if (action == MLX_PRESS && (button == 4 || button == 5))
-        ft_zoom(button, rol);
-    else if (action == MLX_PRESS || action == MLX_RELEASE)
-    {
-        if (button >= MLX_MOUSE_BUTTON_LEFT && button <= MLX_MOUSE_BUTTON_MIDDLE)
-        {
-            if (action == MLX_PRESS)
-            {
-                rol->mouse->button = button;
-                rol->mouse->prev_x = x;
-                rol->mouse->prev_y = y;
-            }
-            else if (action == MLX_RELEASE)
-                rol->mouse->button = 0;
-        }
-    }
-    else if (action == MLX_MOTION && rol->mouse->button != 0)
-        ft_handle_mouse_move(x, y, rol);
+	if (action == MLX_PRESS && (button == 4 || button == 5))
+		ft_zoom(button, rol);
+	else if (action == MLX_PRESS || action == MLX_RELEASE)
+	{
+		if (button >= MLX_MOUSE_BUTTON_LEFT && button <= \
+		MLX_MOUSE_BUTTON_MIDDLE)
+		{
+			if (action == MLX_PRESS)
+			{
+				rol->mouse->button = button;
+				rol->mouse->prev_x = x;
+				rol->mouse->prev_y = y;
+			}
+			else if (action == MLX_RELEASE)
+				rol->mouse->button = 0;
+		}
+	}
+	else if (action == MLX_MOTION && rol->mouse->button != 0)
+		ft_handle_mouse_move(x, y, rol);
 }
 
 // Registers hooks
 void ft_manage_hook(t_fdf *rol)
 {
-    mlx_key_hook(rol->mlx, ft_key_hook, rol);
-    mlx_close_hook(rol->mlx, ft_close_hook, rol);
-    mlx_mouse_hook(rol->mlx, ft_mouse_hook, rol);
-    ft_printf(ORANGE "Hooks " RESET GREEN "initialized successfully...\n" RESET);
+	mlx_key_hook(rol->mlx, &ft_key_hook, rol);
+	mlx_close_hook(rol->mlx, ft_close_hook, rol);
+	mlx_mouse_hook(rol->mlx, ft_mouse_hook, rol);
+	ft_printf(ORANGE "Hooks " RESET GREEN "initialized successfully...\n" \
+	RESET);
 }
