@@ -33,64 +33,77 @@
  * 
  */
 
-// void	ft_bresenham_step(int *start, int *error, int delta[2], int sign[2])
-// {
-// 	int	error2;
-
-// 	error2 = 2 * *error;
-// 	if (error2 > -delta[1])
-// 	{
-// 		*error -= delta[1];
-// 		start[0] += sign[0];
-// 	}
-// 	if (error2 < delta[0])
-// 	{
-// 		*error += delta[0];
-// 		start[1] += sign[1];
-// 	}
-// }
-
-typedef struct s_point1 {
-	int x;
-	int y;
-} t_point1;
-
-void plot_pixel(int x, int y)
+void	ft_bresenham_step(int *start, int *error, int delta[2], int sign[2])
 {
-	// Esta función es un placeholder, aquí deberías colocar la lógica para
-	// dibujar el píxel en la pantalla, por ejemplo usando MLX42.
-	printf("Plot pixel at (%d, %d)\n", x, y);
-}
+	int	error2;
 
-void bresenham(t_point1 start, t_point1 end)
-{
-	int dx = abs(end.x - start.x);
-	int dy = abs(end.y - start.y);
-	int sx = start.x < end.x ? 1 : -1;
-	int sy = start.y < end.y ? 1 : -1;
-	int err = dx - dy;
-	int e2;
-
-	while (1)
+	error2 = 2 * *error;
+	if (error2 > -delta[1])
 	{
-		// Dibuja el pixel en la posición actual
-		plot_pixel(start.x, start.y);
-		// Si hemos llegado al final, terminamos
-		if (start.x == end.x && start.y == end.y)
-			break ;		
-		e2 = 2 * err; // Calculamos el error
-		if (e2 > -dy) // Ajustamos la posición horizontal
-		{
-			err -= dy;
-			start.x += sx;
-		}
-		if (e2 < dx) // Ajustamos la posición vertical
-		{
-			err += dx;
-			start.y += sy;
-		}
+		*error -= delta[1];
+		start[0] += sign[0];
+	}
+	if (error2 < delta[0])
+	{
+		*error += delta[0];
+		start[1] += sign[1];
 	}
 }
+
+// typedef struct s_point1 {
+// 	int x;
+// 	int y;
+// } t_point1;
+
+// void plot_pixel(int x, int y)
+// {
+// 	// Esta función es un placeholder, aquí deberías colocar la lógica para
+// 	// dibujar el píxel en la pantalla, por ejemplo usando MLX42.
+// 	printf("Plot pixel at (%d, %d)\n", x, y);
+// }
+
+// void bresenham(t_point1 start, t_point1 end)
+// {
+// 	int dx;
+// 	int dy;
+// 	int sx;
+// 	int sy;
+// 	int err;
+// 	int e2;
+
+// 	dx = abs(end.x - start.x);
+// 	dy = abs(end.y - start.y);
+// 	// sx = start.x < end.x ? 1 : -1;
+// 	// sy = start.y < end.y ? 1 : -1;
+// 	if (start.x < end.x)
+// 		sx = 1;
+// 	else
+// 		sx = -1;
+// 	if (start.y < end.y)
+// 		sy = 1;
+// 	else
+// 		sy = -1;
+// 	err = dx - dy;
+// 	while (1)
+// 	{
+// 		// Dibuja el pixel en la posición actual
+// 		plot_pixel(start.x, start.y);
+// 		// Si hemos llegado al final, terminamos
+// 		if (start.x == end.x && start.y == end.y)
+// 			break ;
+// 		e2 = 2 * err; // Calculamos el error
+// 		if (e2 > -dy) // Ajustamos la posición horizontal
+// 		{
+// 			err -= dy;
+// 			start.x += sx;
+// 		}
+// 		if (e2 < dx) // Ajustamos la posición vertical
+// 		{
+// 			err += dx;
+// 			start.y += sy;
+// 		}
+// 	}
+// }
 
 // int main()
 // {

@@ -102,6 +102,11 @@ static void	ft_handle_mouse_move(int x, int y, t_fdf *rol)
 		rol->mouse->prev_y = y;
 		ft_draw(rol->map, rol);
 	}
+	// if (mlx_is_key_down(rol->mlx, MLX_KEY_ESCAPE) || \
+	// mlx_is_window_closed(rol->mlx))
+	// {
+	// 	mlx_close_window(rol->mlx);
+	// }
 }
 
 // static void	ft_key_hook(mlx_key_data_t keydata, void *param)
@@ -125,7 +130,7 @@ static void	ft_key_hook(mlx_key_data_t keydata, void *param)
 	rol = (t_fdf *)param;
 	if (rol->mlx && keydata.action == MLX_PRESS && keydata.key == \
 	MLX_KEY_ESCAPE)
-		mlx_close_window(rol->mlx);	
+		mlx_close_window(rol->mlx);
 }
 
 static void	ft_close_hook(void *param)
