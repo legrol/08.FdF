@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_bresenham_step.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rdel-olm <rdel-olm@student.42malaga.com>   #+#  +:+       +#+        */
+/*   By: rdel-olm <rdel-olm@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024-09-07 09:03:30 by rdel-olm          #+#    #+#             */
-/*   Updated: 2024-09-07 09:03:30 by rdel-olm         ###   ########.fr       */
+/*   Created: 2024/09/07 09:03:30 by rdel-olm          #+#    #+#             */
+/*   Updated: 2024/09/11 19:22:00 by rdel-olm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,28 +62,28 @@ void	ft_bresenham_step(int *start, int *error, int delta[2], int sign[2])
 // 	printf("Plot pixel at (%d, %d)\n", x, y);
 // }
 
-// void bresenham(t_point1 start, t_point1 end)
+// void bresenham(t_point start, t_point end)
 // {
-// 	int dx;
-// 	int dy;
-// 	int sx;
-// 	int sy;
-// 	int err;
-// 	int e2;
+// 	int32_t deltax;
+// 	int32_t deltay;
+// 	int32_t signx;
+// 	int32_t signy;
+// 	int32_t error;
+// 	int32_t error2;
 
-// 	dx = abs(end.x - start.x);
-// 	dy = abs(end.y - start.y);
+// 	deltax = abs(end.x - start.x);
+// 	deltay = abs(end.y - start.y);
 // 	// sx = start.x < end.x ? 1 : -1;
 // 	// sy = start.y < end.y ? 1 : -1;
 // 	if (start.x < end.x)
-// 		sx = 1;
+// 		signx = 1;
 // 	else
-// 		sx = -1;
+// 		signx = -1;
 // 	if (start.y < end.y)
-// 		sy = 1;
+// 		signy = 1;
 // 	else
-// 		sy = -1;
-// 	err = dx - dy;
+// 		signy = -1;
+// 	error = deltax - deltay;
 // 	while (1)
 // 	{
 // 		// Dibuja el pixel en la posición actual
@@ -91,16 +91,16 @@ void	ft_bresenham_step(int *start, int *error, int delta[2], int sign[2])
 // 		// Si hemos llegado al final, terminamos
 // 		if (start.x == end.x && start.y == end.y)
 // 			break ;
-// 		e2 = 2 * err; // Calculamos el error
-// 		if (e2 > -dy) // Ajustamos la posición horizontal
+// 		error2 = 2 * error; // Calculamos el error
+// 		if (error2 > -deltay) // Ajustamos la posición horizontal
 // 		{
-// 			err -= dy;
-// 			start.x += sx;
+// 			error -= deltay;
+// 			start.x += signx;
 // 		}
-// 		if (e2 < dx) // Ajustamos la posición vertical
+// 		if (error2 < deltax) // Ajustamos la posición vertical
 // 		{
-// 			err += dx;
-// 			start.y += sy;
+// 			error += deltax;
+// 			start.y += signy;
 // 		}
 // 	}
 // }
