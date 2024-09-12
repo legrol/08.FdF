@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   fdf.h                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rdel-olm <rdel-olm@student.42malaga.com>   #+#  +:+       +#+        */
+/*   By: rdel-olm <rdel-olm@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024-09-12 09:54:33 by rdel-olm          #+#    #+#             */
-/*   Updated: 2024-09-12 09:54:33 by rdel-olm         ###   ########.fr       */
+/*   Created: 2024/08/23 11:36:56 by rdel-olm          #+#    #+#             */
+/*   Updated: 2024/09/11 19:49:13 by rdel-olm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,7 +80,6 @@ typedef struct s_point
 	int32_t			x;
 	int32_t			y;
 	int32_t			z;
-	int32_t			reverse;
 	unsigned long	color;
 }					t_point;
 
@@ -100,10 +99,6 @@ typedef struct s_fdf
 	t_map			*map;
 	t_cam			*cam;
 	t_mouse			*mouse;
-	int32_t			bpp;
-	int32_t			size_line;
-	char			*data_addr;
-	int32_t			steep;
 	int32_t			win_width;
 	int32_t			win_height;
 }					t_fdf;
@@ -160,11 +155,5 @@ int32_t		ft_manage_columns(int32_t map_columns, char *read_line, \
 char *map_line);
 int32_t		ft_matrix_height(char *map_file);
 int32_t		ft_matrix_width(char *map_file);
-
-
-// ***********
-t_point		project(int x, int y, t_fdf *rol);
-int			get_default_color(int z, t_map *map);
-
 
 #endif
