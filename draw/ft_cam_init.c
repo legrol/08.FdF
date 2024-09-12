@@ -34,6 +34,9 @@ t_cam	*ft_cam_init(t_fdf *rol)
 	cam->x_ang = -0.61547297;
 	cam->y_ang = -0.523599;
 	cam->z_ang = 0.61547297;
+	// cam->x_ang = 0.61547297;
+	// cam->y_ang = 0.523599;
+	// cam->z_ang = 0.61547297;
 	cam->prev_x = 0;
 	cam->prev_y = 0;
 	cam->iso = 1;

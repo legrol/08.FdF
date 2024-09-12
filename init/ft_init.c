@@ -111,12 +111,12 @@ t_fdf	*ft_init(const char *filepath)
 	ft_init_mlx(rol, mapname);
 	rol->map = NULL;
 	rol->cam = NULL;
-	rol->mouse = (t_mouse *) malloc(sizeof(t_mouse));
-	if (!rol->mouse)
-	{
-		ft_printf("Error allocating memory for mouse\n");
-		ft_manage_err(BDRED INIT_ERR YELLOW MALLOC_ERR RESET);
-	}
+	// rol->mouse = (t_mouse *) malloc(sizeof(t_mouse));
+	// if (!rol->mouse)
+	// {
+	// 	ft_printf("Error allocating memory for mouse\n");
+	// 	ft_manage_err(BDRED INIT_ERR YELLOW MALLOC_ERR RESET);
+	// }
 	free(mapname);
 	return (rol);
 }

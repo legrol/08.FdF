@@ -212,8 +212,8 @@ mods, void *param)
 void ft_manage_hook(t_fdf *rol)
 {
 	mlx_key_hook(rol->mlx, &ft_key_hook, rol);
-	mlx_close_hook(rol->mlx, ft_close_hook, rol);
-	mlx_mouse_hook(rol->mlx, ft_mouse_hook, rol);
+	mlx_close_hook(rol->mlx, &ft_close_hook, rol);
+	mlx_mouse_hook(rol->mlx, &ft_mouse_hook, rol);
 	ft_printf(ORANGE "Hooks " RESET GREEN "initialized successfully...\n" \
 	RESET);
 }
