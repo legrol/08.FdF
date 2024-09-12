@@ -165,6 +165,7 @@ int32_t		ft_matrix_width(char *map_file);
 // ***********
 t_point		project(int x, int y, t_fdf *rol);
 int			get_default_color(int z, t_map *map);
+void		ft_draw_line(t_point start, t_point end, t_fdf *rol);
 
 
 #endif

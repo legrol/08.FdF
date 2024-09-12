@@ -265,7 +265,7 @@ t_fdf *rol)
 	}
 }
 
-static void	ft_draw_line(t_point start, t_point end, t_fdf *rol)
+void	ft_draw_line(t_point start, t_point end, t_fdf *rol)
 {
 	float	dy;
 	float	dx;
@@ -316,56 +316,103 @@ static void	ft_draw_line(t_point start, t_point end, t_fdf *rol)
 // 		"-/+:          Flatten");
 // }
 
-void	ft_draw(t_map *map, t_fdf *rol)
+// void	ft_draw(t_map *map, t_fdf *rol)
+// {
+// 	int		x;
+// 	int		y;
+// 	t_point	p1;
+// 	t_point	p2;
+
+// 	mlx_delete_image(rol->mlx, rol->img);
+// 	rol->img = mlx_new_image(rol->mlx, rol->win_width, rol->win_height);
+// 	y = 0;
+// 	if (rol->cam->x_ang > 0)
+// 		y = map->map_height - 1;
+// 	// printf("\nx_ang = %f\n", rol->cam->x_ang);
+// 	// printf("y = %i\n", y);
+// 	// printf("map_height = %i\n\n", map->map_height);
+// 	while (y < map->map_height && y >= 0)
+// 	{
+// 		x = 0;
+// 		if (rol->cam->y_ang > 0)
+// 			x = map->map_width - 1;
+// 		// printf("y_ang = %f\n", rol->cam->y_ang);
+// 		// printf("x = %i\n", x);
+// 		// printf("map_width = %i\n\n", map->map_width);
+// 		// while (x < map->map_width && x >= 0)
+// 		// {
+// 		// 	if (x != map->map_width - 1)
+// 		// 		ft_draw_line(project(x, y, rol), project(x + 1, y, rol), rol);
+// 		// 	if (y != map->map_height - 1)
+// 		// 		ft_draw_line(project(x, y, rol), project(x, y + 1, rol), rol);
+// 		// 	x += -2 * (rol->cam->y_ang > 0) + 1;
+// 		// }
+// 		// y += -2 * (rol->cam->x_ang > 0) + 1;
+// 		while (x < map->map_width && x >= 0)
+// 		{
+// 			if (x != map->map_height - 1)
+// 			{
+// 				p1 = project(x, y, rol);
+// 				p2 = project(x + 1, y, rol);
+// 				ft_draw_line(p1, p2, rol);
+// 			}
+// 			if (y != map->map_width - 1)
+// 			{
+// 				p1 = project(x, y, rol);
+// 				p2 = project(x, y + 1, rol);
+// 				ft_draw_line(p1, p2, rol);
+// 			}
+// 			x += -2 * (rol->cam->y_ang > 0) + 1;
+// 		}
+// 		y += -2 * (rol->cam->x_ang > 0) + 1;
+// 	}
+// 	mlx_image_to_window(rol->mlx, rol->img, 0, 0);
+// //	ft_draw_instructions(rol);
+// }
+static void	src_draw_x(int x, int y, t_fdf *fdf)
 {
-	int		x;
-	int		y;
 	t_point	p1;
 	t_point	p2;
+
+	p1 = project(x, y, fdf);
+	p2 = project(x + 1, y, fdf);
+	ft_draw_line(p1, p2, fdf);
+}
+
+static void	src_draw_y(int x, int y, t_fdf *fdf)
+{
+	t_point	p1;
+	t_point	p2;
+
+	p1 = project(x, y, fdf);
+	p2 = project(x, y + 1, fdf);
+	ft_draw_line(p1, p2, fdf);
+}
+
+void	ft_draw(t_map *map, t_fdf *rol)
+{
+	int	x;
+	int	y;
 
 	mlx_delete_image(rol->mlx, rol->img);
 	rol->img = mlx_new_image(rol->mlx, rol->win_width, rol->win_height);
 	y = 0;
 	if (rol->cam->x_ang > 0)
 		y = map->map_height - 1;
-	// printf("\nx_ang = %f\n", rol->cam->x_ang);
-	// printf("y = %i\n", y);
-	// printf("map_height = %i\n\n", map->map_height);
 	while (y < map->map_height && y >= 0)
 	{
 		x = 0;
 		if (rol->cam->y_ang > 0)
 			x = map->map_width - 1;
-		// printf("y_ang = %f\n", rol->cam->y_ang);
-		// printf("x = %i\n", x);
-		// printf("map_width = %i\n\n", map->map_width);
-		// while (x < map->map_width && x >= 0)
-		// {
-		// 	if (x != map->map_width - 1)
-		// 		ft_draw_line(project(x, y, rol), project(x + 1, y, rol), rol);
-		// 	if (y != map->map_height - 1)
-		// 		ft_draw_line(project(x, y, rol), project(x, y + 1, rol), rol);
-		// 	x += -2 * (rol->cam->y_ang > 0) + 1;
-		// }
-		// y += -2 * (rol->cam->x_ang > 0) + 1;
 		while (x < map->map_width && x >= 0)
 		{
-			if (x != map->map_height - 1)
-			{
-				p1 = project(x, y, rol);
-				p2 = project(x + 1, y, rol);
-				ft_draw_line(p1, p2, rol);
-			}
-			if (y != map->map_width - 1)
-			{
-				p1 = project(x, y, rol);
-				p2 = project(x, y + 1, rol);
-				ft_draw_line(p1, p2, rol);
-			}
+			if (x != map->map_width - 1)
+				src_draw_x(x, y, rol);
+			if (y != map->map_height - 1)
+				src_draw_y(x, y, rol);
 			x += -2 * (rol->cam->y_ang > 0) + 1;
 		}
 		y += -2 * (rol->cam->x_ang > 0) + 1;
 	}
 	mlx_image_to_window(rol->mlx, rol->img, 0, 0);
-//	ft_draw_instructions(rol);
 }

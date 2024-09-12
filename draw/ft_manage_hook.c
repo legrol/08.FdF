@@ -151,13 +151,27 @@ static void	ft_close_hook(void *param)
 	}
 }
 
+// static void	ft_zoom(int button, t_fdf *rol)
+// {
+// 	if (button == 4 || button == 5)
+// 	{
+// 		if (button == 4)
+// 			rol->cam->zoom += 2;
+// 		else if (button == 5)
+// 			rol->cam->zoom -= 2;
+// 		if (rol->cam->zoom < 1)
+// 			rol->cam->zoom = 1;
+// 		ft_draw(rol->map, rol);
+// 	}
+// }
+
 static void	ft_zoom(int button, t_fdf *rol)
 {
-	if (button == 4 || button == 5)
+	if (button == 1 || button == 3)
 	{
-		if (button == 4)
+		if (button == 1)
 			rol->cam->zoom += 2;
-		else if (button == 5)
+		else if (button == 3)
 			rol->cam->zoom -= 2;
 		if (rol->cam->zoom < 1)
 			rol->cam->zoom = 1;

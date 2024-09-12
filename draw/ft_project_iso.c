@@ -88,6 +88,54 @@
 // 	return (point);
 // }
 
+// static void	src_draw_x(int x, int y, t_fdf *fdf)
+// {
+// 	t_point	p1;
+// 	t_point	p2;
+
+// 	p1 = project(x, y, fdf);
+// 	p2 = project(x + 1, y, fdf);
+// 	ft_draw_line(p1, p2, fdf);
+// }
+
+// static void	src_draw_y(int x, int y, t_fdf *fdf)
+// {
+// 	t_point	p1;
+// 	t_point	p2;
+
+// 	p1 = project(x, y, fdf);
+// 	p2 = project(x, y + 1, fdf);
+// 	ft_draw_line(p1, p2, fdf);
+// }
+
+// void	ft_draw(t_map *map, t_fdf *rol)
+// {
+// 	int	x;
+// 	int	y;
+
+// 	mlx_delete_img(rol->mlx, rol->img);
+// 	rol->img = mlx_new_img(rol->mlx, rol->win_width, rol->win_height);
+// 	y = 0;
+// 	if (rol->cam->x_ang > 0)
+// 		y = map->map_height - 1;
+// 	while (y < map->map_height && y >= 0)
+// 	{
+// 		x = 0;
+// 		if (rol->cam->y_ang > 0)
+// 			x = map->map_width - 1;
+// 		while (x < map->map_width && x >= 0)
+// 		{
+// 			if (x != map->map_width - 1)
+// 				src_draw_x(x, y, rol);
+// 			if (y != map->map_height - 1)
+// 				src_draw_y(x, y, rol);
+// 			x += -2 * (rol->cam->y_ang > 0) + 1;
+// 		}
+// 		y += -2 * (rol->cam->x_ang > 0) + 1;
+// 	}
+// 	mlx_img_to_window(rol->mlx, rol->img, 0, 0);
+// }
+
 t_point	project(int x, int y, t_fdf *rol)
 {
 	t_point	point;

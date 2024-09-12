@@ -26,8 +26,9 @@ t_cam	*ft_cam_init(t_fdf *rol)
 	cam = (t_cam *)malloc(sizeof(t_cam));
 	if (!cam)
 		ft_manage_err(BDRED INIT_ERR YELLOW MLLC_CAM_ERR RESET);
-	cam->zoom = ft_get_min(DEFAULT_WIDTH / rol->map->map_width / 2, \
-	DEFAULT_HEIGHT / rol->map->map_height / 2);
+	// cam->zoom = ft_get_min(DEFAULT_WIDTH / rol->map->map_width / 2, \
+	// DEFAULT_HEIGHT / rol->map->map_height / 2);
+	cam->zoom = 70;
 	cam->x_offset = rol->win_width / 2;
 	cam->y_offset = rol->win_height / 2;
 	cam->z_height = 1;
