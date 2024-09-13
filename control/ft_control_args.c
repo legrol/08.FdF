@@ -17,12 +17,12 @@
  * than one argument and and through the "ft_ext_valid" function that the name
  * of the function is correct as well as its extension.
  * 
- * @param int argc 		Number of arguments.
- * @param char **argv 	Arguments.
+ * @param int32_t argc 		Number of arguments.
+ * @param char **argv 		Arguments.
  * 
  */
 
-int	ft_control_args(int argc, char **argv)
+int32_t	ft_control_args(int32_t argc, char **argv)
 {
 	if (argc != 2)
 	{

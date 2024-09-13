@@ -1,29 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_get_min.c                                       :+:      :+:    :+:   */
+/*   ft_absolute.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rdel-olm <rdel-olm@student.42malaga.com>   #+#  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024-09-03 10:01:04 by rdel-olm          #+#    #+#             */
-/*   Updated: 2024-09-03 10:01:04 by rdel-olm         ###   ########.fr       */
+/*   Created: 2024-09-13 09:27:14 by rdel-olm          #+#    #+#             */
+/*   Updated: 2024-09-13 09:27:14 by rdel-olm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/fdf.h"
 
 /**
- * The function "ft_get_min" returns the smallest of the two numbers passed as 
- * parameters.
+ * The function "ft_absolute" xxx
  * 
- * @param int32_t nbr1 The first number to check.
- * @param int32_t nbr2 THe second number to check.
+ * @param float n   xxx
  * 
  */
 
-int32_t	ft_get_min(int32_t nbr1, int32_t nbr2)
+float	ft_absolute(float n)
 {
-	if (nbr1 < nbr2)
-		return (nbr1);
-	return (nbr2);
+	if (n < 0)
+		return (-n);
+	return (n);
 }

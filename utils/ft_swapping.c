@@ -1,29 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_get_min.c                                       :+:      :+:    :+:   */
+/*   ft_swapping.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rdel-olm <rdel-olm@student.42malaga.com>   #+#  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024-09-03 10:01:04 by rdel-olm          #+#    #+#             */
-/*   Updated: 2024-09-03 10:01:04 by rdel-olm         ###   ########.fr       */
+/*   Created: 2024-09-13 09:15:26 by rdel-olm          #+#    #+#             */
+/*   Updated: 2024-09-13 09:15:26 by rdel-olm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/fdf.h"
 
 /**
- * The function "ft_get_min" returns the smallest of the two numbers passed as 
- * parameters.
+ * The function "ft_swap" xxx.
  * 
- * @param int32_t nbr1 The first number to check.
- * @param int32_t nbr2 THe second number to check.
+ * @param uint32_t *a   xxx
+ * @param uint32_t *b   xxx
  * 
  */
 
-int32_t	ft_get_min(int32_t nbr1, int32_t nbr2)
+void	ft_swapping(int *a, int *b)
 {
-	if (nbr1 < nbr2)
-		return (nbr1);
-	return (nbr2);
+	int	tmp;
+
+	tmp = *a;
+	*a = *b;
+	*b = tmp;
 }

@@ -103,12 +103,16 @@ ERR					= ${ERRORS_DIR}/ft_manage_err.c
 INT					= ${INIT_DIR}/ft_init.c \
 						${INIT_DIR}/ft_init_map.c
 
-UTL					= ${UTILS_DIR}/ft_collect_z_minmax.c \
+UTL					= ${UTILS_DIR}/ft_absolute.c \
+						${UTILS_DIR}/ft_collect_z_minmax.c \
 						${UTILS_DIR}/ft_complete_matrix.c \
 						${UTILS_DIR}/ft_count_words.c \
 						${UTILS_DIR}/ft_get_min.c \
 						${UTILS_DIR}/ft_matrix_height.c \
- 						${UTILS_DIR}/ft_matrix_width.c
+						${UTILS_DIR}/ft_matrix_width.c \
+						${UTILS_DIR}/ft_swapping.c \
+						${UTILS_DIR}/ft_part.c
+
 
 CTL					= ${CONTROL_DIR}/ft_check_commas.c \
 						${CONTROL_DIR}/ft_control_args.c \
@@ -119,8 +123,10 @@ CTL					= ${CONTROL_DIR}/ft_check_commas.c \
 DRW					= ${DRAW_DIR}/ft_bresenham_step.c \
 						${DRAW_DIR}/ft_cam_init.c \
 						${DRAW_DIR}/ft_draw.c \
+						${DRAW_DIR}/ft_get_color.c \
 						${DRAW_DIR}/ft_manage_hook.c \
 						${DRAW_DIR}/ft_project_iso.c \
+						${DRAW_DIR}/ft_put_pixel.c \
 						${DRAW_DIR}/ft_reset_angles.c
 
 FRE					= ${FREE_DIR}/ft_cleanup.c \

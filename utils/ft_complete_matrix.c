@@ -18,18 +18,18 @@
  * number has two parameters (value, hexadecimal) it stores them in the pointer
  * to int pointer. If there is only value, the second item is set to -1.
  * 
- * @param int **nb		matrix where the integers read in each position of the
- * 						 line will be stored.
- * @param char *line	line read from the map.
- * @param int width		map width.
+ * @param int32_t **nb		matrix where the integers read in each position of 
+ * 								the line will be stored.
+ * @param char *line		line read from the map.
+ * @param int32_t width		map width.
  * 
  */
 
-void	ft_complete_matrix(int **nb, char *line, int map_width)
+void	ft_complete_matrix(int32_t **nb, char *line, int32_t map_width)
 {
-	char	**number;
-	int		i;
-	int		j;
+	char		**number;
+	int32_t		i;
+	int32_t		j;
 
 	number = ft_split(line, 32);
 	i = 0;

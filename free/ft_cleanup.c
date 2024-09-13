@@ -22,7 +22,7 @@
  *                              NULL.
  * @param char **split_line     an array of string segments derived from 'line'
  *                              which should be freed to prevent memory leaks.
- * @param int row               The index up to which rows in the superarray 
+ * @param int32_t row           The index up to which rows in the superarray 
  *                              have been allocated and may need cleaning. 
  *                              This allows the function to free all rows up 
  *                              to 'row' to handle partial constructions of 
@@ -30,7 +30,7 @@
  * 
  */
 
-void	ft_cleanup(t_map *map, char *line, char **split_line, int row)
+void	ft_cleanup(t_map *map, char *line, char **split_line, int32_t row)
 {
 	if (split_line)
 		ft_free_split(split_line);

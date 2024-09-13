@@ -21,10 +21,10 @@
  * 
  */
 
-int	ft_count_words(char *s, char c)
+int32_t	ft_count_words(char *s, char c)
 {
-	int	count;
-	int	in_word;
+	int32_t	count;
+	int32_t	in_word;
 
 	count = 0;
 	in_word = 0;

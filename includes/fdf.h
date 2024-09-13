@@ -21,12 +21,6 @@
 # include <math.h>			// for PI, etc.
 # include <fcntl.h>			// for oprn, O_RDONLY, etc.
 # include <stdio.h>			// for printf...
-//# include <signal.h>		// for SIGNAL, SIGUSR1, SIGSEGV...
-//# include <sys/types.h>	// for ssize_t, useconds_t...
-//# include <limits.h>		// for INT_MAX, INT_MIN...
-//# include <stdbool.h>		// for boolean...
-//# include <stdint.h>		// for uint, SIZE_MAX...
-//# include <stddef.h>		// for size_t...
 
 // ============================================================================
 // Access to my libraries
@@ -100,9 +94,6 @@ typedef struct s_fdf
 	t_map			*map;
 	t_cam			*cam;
 	t_mouse			*mouse;
-	int32_t			bpp;
-	int32_t			size_line;
-	char			*data_addr;
 	int32_t			steep;
 	int32_t			win_width;
 	int32_t			win_height;
@@ -120,12 +111,13 @@ int32_t		ft_ext_valid(char *map_name);
 // ============================================================================
 // Drawing functions
 // ============================================================================
-void		ft_bresenham_step(int32_t *start, int32_t *error, int32_t \
-delta[2], int32_t sign[2]);
+
 t_cam		*ft_cam_init(t_fdf	*rol);
 void		ft_draw(t_map *map, t_fdf *rol);
+int			ft_get_color(int x, t_point s, t_point e, float factor);
 void		ft_manage_hook(t_fdf *rol);
-t_point		ft_project_iso(int32_t x, int32_t y, int32_t z, t_fdf *rol);
+t_point		project(int32_t x, int32_t y, t_fdf *rol);
+void		ft_put_pixel(t_fdf *rol, int x, int y, int color);
 double		ft_reset_angles(double *angle);
 
 // ============================================================================
@@ -152,19 +144,29 @@ t_fdf		*ft_init(const char *filepath);
 // ============================================================================
 // Several functions
 // ============================================================================
+float		ft_absolute(float n);
 void		ft_collect_z_minmax(t_map *map);
 void		ft_complete_matrix(int32_t **nb, char *line, int32_t map_width);
 int32_t		ft_count_words(char *s, char c);
 int32_t		ft_get_min(int32_t nbr1, int32_t nbr2);
-int32_t		ft_manage_columns(int32_t map_columns, char *read_line, \
-char *map_line);
+int			ft_intpart(float n);
+float		ft_fracpart(float n);
+float		ft_revfracpart(float n);
 int32_t		ft_matrix_height(char *map_file);
 int32_t		ft_matrix_width(char *map_file);
+void		ft_swapping(int *a, int *b);
 
+//***********
+//lost
+int32_t		ft_manage_columns(int32_t map_columns, char *read_line, \
+char *map_line);
+void		ft_bresenham_step(int32_t *start, int32_t *error, int32_t \
+delta[2], int32_t sign[2]);
 
 // ***********
-t_point		project(int x, int y, t_fdf *rol);
-int			get_default_color(int z, t_map *map);
+//news
+
+int			get_default_color(int32_t z, t_map *map);
 void		ft_draw_line(t_point start, t_point end, t_fdf *rol);
 
 
