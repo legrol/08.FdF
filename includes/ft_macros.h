@@ -6,15 +6,15 @@
 /*   By: rdel-olm <rdel-olm@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/24 22:22:32 by rdel-olm          #+#    #+#             */
-/*   Updated: 2024/09/09 13:04:41 by rdel-olm         ###   ########.fr       */
+/*   Updated: 2024/09/13 23:22:24 by rdel-olm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_MACROS_H
 # define FT_MACROS_H
 
-# define DEFAULT_WIDTH			1080
-# define DEFAULT_HEIGHT			720
+# define DEFAULT_WIDTH			1920
+# define DEFAULT_HEIGHT			1080
 # define WIDTH					1920
 # define HEIGHT					1080
 # define DEFAULT_MENU_WIDTH		250

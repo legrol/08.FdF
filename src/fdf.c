@@ -6,7 +6,7 @@
 /*   By: rdel-olm <rdel-olm@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/23 11:33:21 by rdel-olm          #+#    #+#             */
-/*   Updated: 2024/09/08 23:54:25 by rdel-olm         ###   ########.fr       */
+/*   Updated: 2024/09/13 19:31:02 by rdel-olm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,9 +36,9 @@ int32_t	main(int argc, char **argv)
 	ft_manage_hook(rol);
 	ft_draw(rol->map, rol);
 	mlx_loop(rol->mlx);
-/* 	ft_free_map(map);
-	ft_free_fdf(rol); */
 	//mlx_delete_image(rol->mlx, rol->img);
 	mlx_terminate(rol->mlx);
+	// ft_free_map(map);
+	// ft_free_fdf(rol); 
 	return (0);
 }

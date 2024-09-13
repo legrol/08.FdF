@@ -6,7 +6,7 @@
 /*   By: rdel-olm <rdel-olm@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/24 22:13:04 by rdel-olm          #+#    #+#             */
-/*   Updated: 2024/09/05 21:59:01 by rdel-olm         ###   ########.fr       */
+/*   Updated: 2024/09/13 19:46:03 by rdel-olm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,6 @@
 void	ft_manage_err(const char *err)
 {
 	ft_printf("Error: %s\n", err);
-	puts(mlx_strerror(mlx_errno));
+//	puts(mlx_strerror(mlx_errno));
 	exit (EXIT_FAILURE);
 }

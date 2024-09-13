@@ -6,7 +6,7 @@
 /*   By: rdel-olm <rdel-olm@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/03 09:25:24 by rdel-olm          #+#    #+#             */
-/*   Updated: 2024/09/08 20:34:47 by rdel-olm         ###   ########.fr       */
+/*   Updated: 2024/09/13 23:27:57 by rdel-olm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ t_cam	*ft_cam_init(t_fdf *rol)
 	DEFAULT_HEIGHT / rol->map->map_height / 2);
 	cam->x_offset = rol->win_width / 2;
 	cam->y_offset = rol->win_height / 2;
-	cam->z_height = 1;
+	cam->z_height =3.0;
 	cam->x_ang = -0.61547297;
 	cam->y_ang = -0.523599;
 	cam->z_ang = 0.61547297;
