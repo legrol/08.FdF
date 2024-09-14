@@ -209,7 +209,7 @@ ${OBJ_DIR}/%.o: ${FREE_DIR}/%.c
 	@${MKD} $(dir $@)
 	@$(CC) ${CFLAGS} ${IFLAGS} -c $< -o $@
 
-${OBJ_DIR}/%.o: ${PRP_DIR}/%.c
+${OBJ_DIR}/%.o: ${PERIPHERALS_DIR}/%.c
 	@${MKD} $(dir $@)
 	@$(CC) ${CFLAGS} ${IFLAGS} -c $< -o $@
 

@@ -6,7 +6,7 @@
 /*   By: rdel-olm <rdel-olm@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/12 09:52:12 by rdel-olm          #+#    #+#             */
-/*   Updated: 2024/09/14 10:15:38 by rdel-olm         ###   ########.fr       */
+/*   Updated: 2024/09/14 11:54:43 by rdel-olm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -116,23 +116,25 @@ void	ft_draw_line(t_point s, t_point e, t_fdf *rol)
 	ft_draw_line_loop(s, e, gradient, rol);
 }
 
-// static void ft_draw_instructions(t_fdf *rol)
-// {
-// 	// Colocar las instrucciones en la ventana
-// 	mlx_put_string(rol->mlx, "Left Click:   Pan", 5, 0);
-// 	mlx_put_string(rol->mlx, "Right Click:  Rotate x/y", 5, 20);
-// 	mlx_put_string(rol->mlx, "Middle Click: Rotate z", 5, 40);
+static void ft_draw_instructions(t_fdf *rol)
+{
+	// // Colocar las instrucciones en la ventana
+	// mlx_put_string(rol->mlx, "Left Click:   Pan", 5, 0);
+	// mlx_put_string(rol->mlx, "Right Click:  Rotate x/y", 5, 20);
+	// mlx_put_string(rol->mlx, "Middle Click: Rotate z", 5, 40);
 	
-// 	// Mostrar la proyección actual
-// 	if (rol->cam->iso)
-// 		mlx_put_string(rol->mlx, "Space:        Toggle projection (Current: Isometric)", 5, 60);
-// 	else
-// 		mlx_put_string(rol->mlx, "Space:        Toggle projection (Current: Parallel)", 5, 60);
+	// // Mostrar la proyección actual
+	// if (rol->cam->iso)
+	// 	mlx_put_string(rol->mlx, "Space:        Toggle projection (Current: Isometric)", 5, 60);
+	// else
+	// 	mlx_put_string(rol->mlx, "Space:        Toggle projection (Current: Parallel)", 5, 60);
 
-// 	// Mostrar otras instrucciones
-// 	mlx_put_string(rol->mlx, "R:            Reset", 5, 80);
-// 	mlx_put_string(rol->mlx, "-/+:          Flatten", 5, 100);
-// }
+	// Mostrar otras instrucciones
+	mlx_put_string(rol->mlx, "Controls", 5, 0);
+	mlx_put_string(rol->mlx, "R:            			Reset", 5, 20);
+	mlx_put_string(rol->mlx, "-/+:          			Flatten", 5, 40);
+	mlx_put_string(rol->mlx, "Up/Down/Right/Left:		Move", 5, 60);
+}
 
 static void	src_draw_x(int x, int y, t_fdf *fdf)
 {
@@ -180,5 +182,5 @@ void	ft_draw(t_map *map, t_fdf *rol)
 		y += -2 * (rol->cam->x_ang > 0) + 1;
 	}
 	mlx_image_to_window(rol->mlx, rol->img, 0, 0);
-	// ft_draw_instructions(rol);
+	ft_draw_instructions(rol);
 }
