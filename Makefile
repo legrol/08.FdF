@@ -50,6 +50,7 @@ INIT_DIR			= ./init
 UTILS_DIR			= ./utils
 LIBRARIES			= ./libs
 OBJ_DIR				= ./obj
+PERIPHERALS_DIR		= ./peripherals
 LIBFT_DIR			= libft
 PRINTFT_DIR			= printf
 EXAMFT_DIR			= examft
@@ -113,6 +114,7 @@ UTL					= ${UTILS_DIR}/ft_absolute.c \
 						${UTILS_DIR}/ft_swapping.c \
 						${UTILS_DIR}/ft_part.c
 
+PRP					= ${PERIPHERALS_DIR}/ft_keyboard.c
 
 CTL					= ${CONTROL_DIR}/ft_check_commas.c \
 						${CONTROL_DIR}/ft_control_args.c \
@@ -144,6 +146,8 @@ OBJ_UTL				= $(patsubst ${UTILS_DIR}/%.c, ${OBJ_DIR}/%.o, ${UTL})
 OBJ_CTL				= $(patsubst ${CONTROL_DIR}/%.c, ${OBJ_DIR}/%.o, ${CTL})
 OBJ_DRW				= $(patsubst ${DRAW_DIR}/%.c, ${OBJ_DIR}/%.o, ${DRW})
 OBJ_FRE				= $(patsubst ${FRE_DIR}/%.c, ${OBJ_DIR}/%.o, ${FRE})
+OBJ_PRP				= $(patsubst ${PERIPHERALS_DIR}/%.c, ${OBJ_DIR}/%.o, \
+						${PRP})
 
 # ══ Sources Bonus ═══════════════════════════════════════════════════════════ #
 #    -------------                                                             #
@@ -164,11 +168,13 @@ all: ${NAME}
 
 ${NAME}: ftlibft ftprintf ftexamft ${LIBMLX42_A} ${OBJ_SRC} ${OBJ_GNL} \
 									${OBJ_ERR} ${OBJ_INT} ${OBJ_UTL} \
-									${OBJ_CTL} ${OBJ_DRW} ${OBJ_FRE}
+									${OBJ_CTL} ${OBJ_DRW} ${OBJ_FRE} \
+									${OBJ_PRP}
 	@echo "$(YELLOW)Compiling root ...$(DEF_COLOR)"
 	@${CC} ${CFLAGS} ${IFLAGS} -o ${NAME} ${OBJ_SRC} ${OBJ_GNL} ${OBJ_ERR} \
 									${OBJ_INT} ${OBJ_UTL} ${OBJ_CTL} \
-									${OBJ_DRW} ${OBJ_FRE} ${LFLAGS}
+									${OBJ_DRW} ${OBJ_FRE} ${OBJ_PRP} \
+									${LFLAGS}
 	@echo "$(GREEN) $(NAME) all created ✓$(DEF_COLOR)"
 
 ${OBJ_DIR}/%.o: ${SRC_DIR}/%.c
@@ -200,6 +206,10 @@ ${OBJ_DIR}/%.o: ${DRAW_DIR}/%.c
 	@$(CC) ${CFLAGS} ${IFLAGS} -c $< -o $@
 
 ${OBJ_DIR}/%.o: ${FREE_DIR}/%.c
+	@${MKD} $(dir $@)
+	@$(CC) ${CFLAGS} ${IFLAGS} -c $< -o $@
+
+${OBJ_DIR}/%.o: ${PRP_DIR}/%.c
 	@${MKD} $(dir $@)
 	@$(CC) ${CFLAGS} ${IFLAGS} -c $< -o $@
 

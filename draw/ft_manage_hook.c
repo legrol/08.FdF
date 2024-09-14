@@ -6,7 +6,7 @@
 /*   By: rdel-olm <rdel-olm@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/03 14:39:49 by rdel-olm          #+#    #+#             */
-/*   Updated: 2024/09/09 14:23:28 by rdel-olm         ###   ########.fr       */
+/*   Updated: 2024/09/14 10:58:26 by rdel-olm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -109,29 +109,7 @@
 // 	// }
 // }
 
-// static void	ft_key_hook(mlx_key_data_t keydata, void *param)
-// {
-// 	t_fdf	*rol;
 
-// 	rol = (t_fdf *)param;
-// 	if (rol && keydata.action == MLX_PRESS && keydata.key == MLX_KEY_ESCAPE)
-// 	{
-// 		if (rol->mlx)
-// 		{
-// 			mlx_close_window(rol->mlx);
-// 		}
-// 	}
-// }
-
-static void	ft_key_hook(mlx_key_data_t keydata, void *param)
-{
-	t_fdf	*rol;
-
-	rol = (t_fdf *)param;
-	if (rol->mlx && keydata.action == MLX_PRESS && keydata.key == \
-	MLX_KEY_ESCAPE)
-		mlx_close_window(rol->mlx);
-}
 
 // static void	ft_close_hook(void *param)
 // {

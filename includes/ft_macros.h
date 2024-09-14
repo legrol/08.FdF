@@ -6,17 +6,25 @@
 /*   By: rdel-olm <rdel-olm@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/24 22:22:32 by rdel-olm          #+#    #+#             */
-/*   Updated: 2024/09/13 23:22:24 by rdel-olm         ###   ########.fr       */
+/*   Updated: 2024/09/14 10:43:39 by rdel-olm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_MACROS_H
 # define FT_MACROS_H
 
-# define DEFAULT_WIDTH			1920
-# define DEFAULT_HEIGHT			1080
+/**
+ * Standard image sizes in pixels
+ * 	1920 * 1080 HDTV, 16:9, presentations, RRSS images
+ *  1280 * 720 HD, 16:9, photography and cinema
+ *  1080 * 1080 RRSS publications and profile images, 1:1
+ * 
+ */
+# define DEFAULT_WIDTH			1280
+# define DEFAULT_HEIGHT			720
 # define WIDTH					1920
 # define HEIGHT					1080
+
 # define DEFAULT_MENU_WIDTH		250
 # define M_PI					3.14159265358979323846
 
