@@ -6,7 +6,7 @@
 /*   By: rdel-olm <rdel-olm@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/12 09:54:33 by rdel-olm          #+#    #+#             */
-/*   Updated: 2024/09/14 11:34:08 by rdel-olm         ###   ########.fr       */
+/*   Updated: 2024/09/14 12:23:08 by rdel-olm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -115,6 +115,7 @@ int32_t		ft_ext_valid(char *map_name);
 t_cam		*ft_cam_init(t_fdf	*rol);
 void		ft_draw(t_map *map, t_fdf *rol);
 int			ft_get_color(int x, t_point s, t_point e, float factor);
+int			ft_get_default_color(int z, t_map *map);
 void		ft_manage_hook(t_fdf *rol);
 t_point		project(int32_t x, int32_t y, t_fdf *rol);
 void		ft_put_pixel(t_fdf *rol, int x, int y, int color);

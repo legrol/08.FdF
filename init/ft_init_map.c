@@ -6,7 +6,7 @@
 /*   By: rdel-olm <rdel-olm@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/31 20:50:57 by rdel-olm          #+#    #+#             */
-/*   Updated: 2024/09/09 15:24:23 by rdel-olm         ###   ########.fr       */
+/*   Updated: 2024/09/14 12:43:26 by rdel-olm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,6 +97,7 @@ static void	ft_fill_row(t_map *map, char **split_line, int row)
 			return ;
 		}
 		map->superarray[row][j][0] = ft_atoi(split_line[j]);
+		// map->superarray[row][j][1] = 0x423658;
 		j++;
 	}
 }

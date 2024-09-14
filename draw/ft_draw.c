@@ -6,7 +6,7 @@
 /*   By: rdel-olm <rdel-olm@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/12 09:52:12 by rdel-olm          #+#    #+#             */
-/*   Updated: 2024/09/14 11:54:43 by rdel-olm         ###   ########.fr       */
+/*   Updated: 2024/09/14 12:13:20 by rdel-olm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,30 @@
  * ft_revfracpart function reverse fractional part
  * 
  */
+static void ft_draw_instructions(t_fdf *rol)
+{
+	// // Colocar las instrucciones en la ventana
+	// mlx_put_string(rol->mlx, "Left Click:   Pan", 5, 0);
+	// mlx_put_string(rol->mlx, "Right Click:  Rotate x/y", 5, 20);
+	// mlx_put_string(rol->mlx, "Middle Click: Rotate z", 5, 40);
+	
+	// // Mostrar la proyección actual
+	// if (rol->cam->iso)
+	// 	mlx_put_string(rol->mlx, "Space:        Toggle projection (Current: Isometric)", 5, 60);
+	// else
+	// 	mlx_put_string(rol->mlx, "Space:        Toggle projection (Current: Parallel)", 5, 60);
+
+	// Mostrar otras instrucciones
+	mlx_put_string(rol->mlx, "Controls", 5, 0);
+	mlx_put_string(rol->mlx, "--------", 5, 20);
+	mlx_put_string(rol->mlx, "", 5, 40);
+	mlx_put_string(rol->mlx, "R:         Reset", 5, 60);
+	mlx_put_string(rol->mlx, "-/+: 		    Flatten/Lift", 5, 80);
+	mlx_put_string(rol->mlx, "Key Up: 	  Move Up", 5, 100);
+	mlx_put_string(rol->mlx, "Key Down:	 Move Down", 5, 120);
+	mlx_put_string(rol->mlx, "Key Right: Move Right", 5, 140);
+	mlx_put_string(rol->mlx, "Key Left:	 Move Left", 5, 160);
+}
 
 static void	ft_draw_line_loop(t_point s, t_point e, float gradient, \
 t_fdf *rol)
@@ -114,26 +138,6 @@ void	ft_draw_line(t_point s, t_point e, t_fdf *rol)
 	if (dx == 0.0f)
 		gradient = 1.f;
 	ft_draw_line_loop(s, e, gradient, rol);
-}
-
-static void ft_draw_instructions(t_fdf *rol)
-{
-	// // Colocar las instrucciones en la ventana
-	// mlx_put_string(rol->mlx, "Left Click:   Pan", 5, 0);
-	// mlx_put_string(rol->mlx, "Right Click:  Rotate x/y", 5, 20);
-	// mlx_put_string(rol->mlx, "Middle Click: Rotate z", 5, 40);
-	
-	// // Mostrar la proyección actual
-	// if (rol->cam->iso)
-	// 	mlx_put_string(rol->mlx, "Space:        Toggle projection (Current: Isometric)", 5, 60);
-	// else
-	// 	mlx_put_string(rol->mlx, "Space:        Toggle projection (Current: Parallel)", 5, 60);
-
-	// Mostrar otras instrucciones
-	mlx_put_string(rol->mlx, "Controls", 5, 0);
-	mlx_put_string(rol->mlx, "R:            			Reset", 5, 20);
-	mlx_put_string(rol->mlx, "-/+:          			Flatten", 5, 40);
-	mlx_put_string(rol->mlx, "Up/Down/Right/Left:		Move", 5, 60);
 }
 
 static void	src_draw_x(int x, int y, t_fdf *fdf)

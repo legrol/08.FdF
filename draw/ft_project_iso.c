@@ -6,7 +6,7 @@
 /*   By: rdel-olm <rdel-olm@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/12 09:53:35 by rdel-olm          #+#    #+#             */
-/*   Updated: 2024/09/13 23:04:14 by rdel-olm         ###   ########.fr       */
+/*   Updated: 2024/09/15 01:36:55 by rdel-olm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
  * The function "ft_project_iso" Isometric projection to convert 3D coordinates
  * to 2D.
  * 
- * Angle_x and angle_y are angles for the isometric projection (examples).
+ * ang_x and ang_y are angs for the isometric projection (examples).
  * Projected.x and projected.y They are used for the transformation of 3D 
  * 							   coordinates to 2D by applying the isometric 
  * 							   projection.
@@ -45,6 +45,12 @@ t_point	project(int x, int y, t_fdf *rol)
 	y_new = (point.x + point.y) * sin(0.523599) - z;
 	point.x = x_new + rol->cam->x_offset;
 	point.y = y_new + rol->cam->y_offset;
-	point.color = 0xffffff;
+	if (rol->map->superarray[y][x][1] >= 0)
+		point.color = rol->map->superarray[y][x][1];
+	else
+	{
+		point.color = ft_get_default_color(rol->map->superarray[y][x][0], \
+		rol->map);
+	}
 	return (point);
 }

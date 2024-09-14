@@ -125,6 +125,7 @@ CTL					= ${CONTROL_DIR}/ft_check_commas.c \
 DRW					= ${DRAW_DIR}/ft_cam_init.c \
 						${DRAW_DIR}/ft_draw.c \
 						${DRAW_DIR}/ft_get_color.c \
+						${DRAW_DIR}/ft_get_default_color.c \
 						${DRAW_DIR}/ft_manage_hook.c \
 						${DRAW_DIR}/ft_project_iso.c \
 						${DRAW_DIR}/ft_put_pixel.c \
