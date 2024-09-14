@@ -120,8 +120,7 @@ CTL					= ${CONTROL_DIR}/ft_check_commas.c \
 						${CONTROL_DIR}/ft_control_map.c \
 						${CONTROL_DIR}/ft_ext_valid.c
 
-DRW					= ${DRAW_DIR}/ft_bresenham_step.c \
-						${DRAW_DIR}/ft_cam_init.c \
+DRW					= ${DRAW_DIR}/ft_cam_init.c \
 						${DRAW_DIR}/ft_draw.c \
 						${DRAW_DIR}/ft_get_color.c \
 						${DRAW_DIR}/ft_manage_hook.c \

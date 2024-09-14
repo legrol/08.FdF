@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_draw.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rdel-olm <rdel-olm@student.42malaga.com>   #+#  +:+       +#+        */
+/*   By: rdel-olm <rdel-olm@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024-09-12 09:52:12 by rdel-olm          #+#    #+#             */
-/*   Updated: 2024-09-12 09:52:12 by rdel-olm         ###   ########.fr       */
+/*   Created: 2024/09/12 09:52:12 by rdel-olm          #+#    #+#             */
+/*   Updated: 2024/09/13 23:43:03 by rdel-olm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -118,11 +118,11 @@ void	ft_draw_line(t_point s, t_point e, t_fdf *rol)
 
 // static void	ft_draw_instructions(t_fdf *rol)
 // {
-// 	mlx_string_put(rol->mlx, rol->win, 5, 0, 0xFFFFFF,
+// 	mlx_string_put(rol->mlx, rol->img, 5, 0, 0xFFFFFF,
 // 		"Left Click:   Pan");
-// 	mlx_string_put(rol->mlx, rol->win, 5, 20, 0xFFFFFF,
+// 	mlx_string_put(rol->mlx, rol->img, 5, 20, 0xFFFFFF,
 // 		"Right Click:  Rotate x/y");
-// 	mlx_string_put(rol->mlx, rol->win, 5, 40, 0xFFFFFF,
+// 	mlx_string_put(rol->mlx, rol->wimgin, 5, 40, 0xFFFFFF,
 // 		"Middle Click: Rotate z");
 // 	if (rol->cam->iso)
 // 		mlx_string_put(rol->mlx, rol->win, 5, 60, 0xFFFFFF,
