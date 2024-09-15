@@ -6,7 +6,7 @@
 /*   By: rdel-olm <rdel-olm@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/28 15:22:08 by rdel-olm          #+#    #+#             */
-/*   Updated: 2024/09/15 19:57:38 by rdel-olm         ###   ########.fr       */
+/*   Updated: 2024/09/15 21:45:34 by rdel-olm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,24 +87,30 @@
 // 	return (ft_atoi(str));
 // }
 
-static	unsigned int	ft_htol(const char *str)
+static	unsigned int	ft_htol(char *str)
 {
-	const char		*hex;
+	char			*hex_lower;
+	char			*hex_upper;
 	unsigned long	res;
-	const char		*ptr;
+	char			*ptr;
 
-	hex = "0123456789abcdef";
+	hex_lower = "0123456789abcdef";
+	hex_upper = "0123456789ABCDEF";
 	res = 0;
 	if (str[0] == 48 && (str[1] == 'x' || str[1] == 'X'))
 		str += 2;
 	while (*str != '\0')
 	{
-		ptr = ft_strchr(hex, *str);
+		ptr = ft_strchr(hex_lower, *str);
+		printf("%s\n", ptr);
+		if (ptr == NULL)
+			ptr = ft_strchr(hex_upper, *str);
 		if (ptr == NULL)
 			break ;
-		res = res * 16 + (ptr - hex);
+		res = res * 16 + (ptr - (ft_strchr(hex_lower, *str) ? hex_lower : hex_upper));
 		str++;
 	}
+	printf("%lu\n\n", res);
 	return (res);
 }
 
@@ -122,6 +128,7 @@ static int	ft_color_zcell(char *str, t_map *map, int row, int j)
 	}
 	if (str[i] == ',')
 		i++;
+	printf("\n%c, %i\n", str[i], i);
 	map->superarray[row][j][1] = ft_htol(&str[i]);
 	return (z);
 }
