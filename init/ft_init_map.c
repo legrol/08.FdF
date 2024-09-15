@@ -6,7 +6,7 @@
 /*   By: rdel-olm <rdel-olm@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/31 20:50:57 by rdel-olm          #+#    #+#             */
-/*   Updated: 2024/09/14 12:43:26 by rdel-olm         ###   ########.fr       */
+/*   Updated: 2024/09/15 19:56:50 by rdel-olm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,13 +90,15 @@ static void	ft_fill_row(t_map *map, char **split_line, int row)
 	j = 0;
 	while (j < map->map_width && split_line[j] != NULL)
 	{
-		map->superarray[row][j] = (int *)malloc(sizeof(int));
+		map->superarray[row][j] = (int *)malloc(2 * sizeof(int));
 		if (!map->superarray[row][j])
 		{
 			ft_free_inner(map->superarray[row], j);
 			return ;
 		}
 		map->superarray[row][j][0] = ft_atoi(split_line[j]);
+		map->superarray[row][j][1] = 0xffffff;
+		ft_check_commas(split_line[j], map, row, j);
 		// map->superarray[row][j][1] = 0x423658;
 		j++;
 	}

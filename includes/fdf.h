@@ -6,7 +6,7 @@
 /*   By: rdel-olm <rdel-olm@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/12 09:54:33 by rdel-olm          #+#    #+#             */
-/*   Updated: 2024/09/14 12:23:08 by rdel-olm         ###   ########.fr       */
+/*   Updated: 2024/09/15 14:36:36 by rdel-olm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,7 +102,7 @@ typedef struct s_fdf
 // ============================================================================
 // Several controls
 // ============================================================================
-int32_t		ft_check_commas(char *str, t_point *node);
+int			ft_check_commas(char *str, t_map *map, int row, int j);
 int32_t		ft_control_args(int32_t argc, char **argv);
 char		*ft_control_fd(char *argv);
 void		ft_control_map(char **argv, t_map *map);
