@@ -19,13 +19,21 @@
  * 
  */
 
-void ft_free_map(t_map *map) {
-	if (map != NULL && map->superarray != NULL) {
-		int i = 0;
-		while (i < map->map_height) {
-			int j = 0;
-			if (map->superarray[i] != NULL) {
-				while (j < map->map_width) {
+void	ft_free_map(t_map *map)
+{
+	int	i;
+	int	j;	
+
+	if (map != NULL && map->superarray != NULL)
+	{
+		i = 0;
+		while (i < map->map_height)
+		{
+			j = 0;
+			if (map->superarray[i] != NULL)
+			{
+				while (j < map->map_width)
+				{
 					free(map->superarray[i][j]);
 					map->superarray[i][j] = NULL;
 					j++;

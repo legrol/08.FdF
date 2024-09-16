@@ -40,10 +40,6 @@ int	ft_get_color(int x, t_point s, t_point e, float factor)
 	float	percent;
 
 	percent = ft_absolute(x - s.x) / ft_absolute(e.x - s.x);
-	// if (ft_absolute(e.x - s.x) != 0)
-	//     percent = (float)(x - s.x) / (float)(e.x - s.x);
-	// else
-	//     percent = 1.0;
 	if (s.reverse)
 	{
 		r = ft_lin_itp((e.color >> 16) & 0xFF, (s.color >> 16) & 0xFF, percent);
@@ -59,6 +55,5 @@ int	ft_get_color(int x, t_point s, t_point e, float factor)
 	r *= fabs(factor);
 	g *= fabs(factor);
 	b *= fabs(factor);
-	// return ((0xFF << 24) | (r << 16) | (g << 8) | b);
 	return ((r << 16) | (g << 8) | b);
 }

@@ -58,20 +58,6 @@
  */
 static void	ft_draw_instructions(t_fdf *rol)
 {
-	// // Colocar las instrucciones en la ventana
-	// mlx_put_string(rol->mlx, "Left Click:   Pan", 5, 0);
-	// mlx_put_string(rol->mlx, "Right Click:  Rotate x/y", 5, 20);
-	// mlx_put_string(rol->mlx, "Middle Click: Rotate z", 5, 40);
-	
-	// // Mostrar la proyección actual
-	// if (rol->cam->iso)
-	// 	mlx_put_string(rol->mlx, "Space:        Toggle projection (Current: \
-	//Isometric)", 5, 60);
-	// else
-	// 	mlx_put_string(rol->mlx, "Space:        Toggle projection (Current: \
-	//Parallel)", 5, 60);
-
-	// Mostrar otras instrucciones
 	mlx_put_string(rol->mlx, "Controls", 5, 0);
 	mlx_put_string(rol->mlx, "--------", 5, 20);
 	mlx_put_string(rol->mlx, "", 5, 40);

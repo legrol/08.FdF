@@ -52,5 +52,4 @@
 # define MOUSE_WHEEL_DOWN		5
 # define MLX_MOTION				6
 
-
 #endif
