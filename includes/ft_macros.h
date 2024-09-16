@@ -20,8 +20,8 @@
  *  1080 * 1080 RRSS publications and profile images, 1:1
  * 
  */
-# define DEFAULT_WIDTH			1280
-# define DEFAULT_HEIGHT			720
+# define DEFAULT_WIDTH			1920
+# define DEFAULT_HEIGHT			1080
 # define WIDTH					1920
 # define HEIGHT					1080
 

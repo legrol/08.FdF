@@ -109,8 +109,6 @@
 // 	// }
 // }
 
-
-
 // static void	ft_close_hook(void *param)
 // {
 // 	t_fdf	*rol;
@@ -127,44 +125,6 @@
 // 		free(rol);
 // 		rol = NULL;
 // 	}
-// }
-
-// static void	ft_zoom(int button, t_fdf *rol)
-// {
-// 	if (button == 4 || button == 5)
-// 	{
-// 		if (button == 4)
-// 			rol->cam->zoom += 2;
-// 		else if (button == 5)
-// 			rol->cam->zoom -= 2;
-// 		if (rol->cam->zoom < 1)
-// 			rol->cam->zoom = 1;
-// 		ft_draw(rol->map, rol);
-// 	}
-// }
-
-// static void	ft_zoom(int button, t_fdf *rol)
-// {
-// 	if (button == 1 || button == 3)
-// 	{
-// 		if (button == 1)
-// 			rol->cam->zoom += 2;
-// 		else if (button == 3)
-// 			rol->cam->zoom -= 2;
-// 		if (rol->cam->zoom < 1)
-// 			rol->cam->zoom = 1;
-// 		ft_draw(rol->map, rol);
-// 	}
-// }
-
-// static void ft_move_z(int x, int y, t_fdf *rol)
-// {
-//     if (x < (DEFAULT_WIDTH / 2) + rol->cam->x_offset)
-//         rol->cam->z_ang -= (y - rol->mouse->prev_y) * 0.002;
-//     else
-//         rol->cam->z_ang += (y - rol->mouse->prev_y) * 0.002;
-
-//     ft_draw(rol->map, rol);
 // }
 
 // static void ft_mouse_hook(mouse_key_t button, action_t action, modifier_key_t \
@@ -200,8 +160,7 @@
 // 		ft_handle_mouse_move(x, y, rol);
 // }
 
-// Registers hooks
-void ft_manage_hook(t_fdf *rol)
+void	ft_manage_hook(t_fdf *rol)
 {
 	mlx_key_hook(rol->mlx, &ft_key_hook, rol);
 	// mlx_close_hook(rol->mlx, &ft_close_hook, rol);

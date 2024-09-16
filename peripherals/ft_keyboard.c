@@ -20,6 +20,18 @@
  * 
  */
 
+static void	ft_move_zoom(mlx_key_data_t keydata, void *param)
+{
+	t_fdf	*fdf;
+
+	fdf = (t_fdf *)param;
+	if (keydata.action == MLX_PRESS && keydata.key == MLX_KEY_W)
+		fdf->cam->zoom += 1;
+	else if (keydata.action == MLX_PRESS && keydata.key == MLX_KEY_S \
+	&& fdf->cam->zoom > 1)
+		fdf->cam->zoom -= 1;
+}
+
 static void	ft_reset(t_fdf *rol)
 {
 	rol->cam->x_offset = rol->win_width / 2;
@@ -105,5 +117,8 @@ void	ft_key_hook(mlx_key_data_t keydata, void *param)
 	else if (rol->mlx && keydata.action == MLX_PRESS && \
 	keydata.key == MLX_KEY_R)
 		ft_reset(rol);
-	ft_draw(rol->map, rol);    
+	else if (rol->mlx && keydata.action == MLX_PRESS && \
+	(keydata.key == MLX_KEY_W || keydata.key == MLX_KEY_S))
+		ft_move_zoom(keydata, rol);
+	ft_draw(rol->map, rol);
 }

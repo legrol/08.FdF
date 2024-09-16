@@ -56,7 +56,7 @@
  * ft_revfracpart function reverse fractional part
  * 
  */
-static void ft_draw_instructions(t_fdf *rol)
+static void	ft_draw_instructions(t_fdf *rol)
 {
 	// // Colocar las instrucciones en la ventana
 	// mlx_put_string(rol->mlx, "Left Click:   Pan", 5, 0);
@@ -65,9 +65,11 @@ static void ft_draw_instructions(t_fdf *rol)
 	
 	// // Mostrar la proyección actual
 	// if (rol->cam->iso)
-	// 	mlx_put_string(rol->mlx, "Space:        Toggle projection (Current: Isometric)", 5, 60);
+	// 	mlx_put_string(rol->mlx, "Space:        Toggle projection (Current: \
+	//Isometric)", 5, 60);
 	// else
-	// 	mlx_put_string(rol->mlx, "Space:        Toggle projection (Current: Parallel)", 5, 60);
+	// 	mlx_put_string(rol->mlx, "Space:        Toggle projection (Current: \
+	//Parallel)", 5, 60);
 
 	// Mostrar otras instrucciones
 	mlx_put_string(rol->mlx, "Controls", 5, 0);
@@ -79,6 +81,8 @@ static void ft_draw_instructions(t_fdf *rol)
 	mlx_put_string(rol->mlx, "Key Down:	 Move Down", 5, 120);
 	mlx_put_string(rol->mlx, "Key Right: Move Right", 5, 140);
 	mlx_put_string(rol->mlx, "Key Left:	 Move Left", 5, 160);
+	mlx_put_string(rol->mlx, "W:         Zoom in", 5, 180);
+	mlx_put_string(rol->mlx, "S:         Zoom out", 5, 200);
 }
 
 static void	ft_draw_line_loop(t_point s, t_point e, float gradient, \

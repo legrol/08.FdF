@@ -107,7 +107,10 @@ static	unsigned int	ft_htol(char *str)
 			ptr = ft_strchr(hex_upper, *str);
 		if (ptr == NULL)
 			break ;
-		res = res * 16 + (ptr - (ft_strchr(hex_lower, *str) ? hex_lower : hex_upper));
+		if (ft_strchr(hex_lower, *str))
+			res = res * 16 + (ptr - hex_lower);
+		else
+			res = res * 16 + (ptr - hex_upper);
 		str++;
 	}
 	printf("%lu\n\n", res);
@@ -142,6 +145,7 @@ int	ft_check_commas(char *str, t_map *map, int row, int j)
 	{
 		if (str[i] == ',')
 			return (ft_color_zcell(str, map, row, j));
+		// map->superarray[row][j][1] = 0x000000;
 		map->superarray[row][j][1] = 0xffffff;
 		i++;
 	}

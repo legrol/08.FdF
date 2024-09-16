@@ -47,6 +47,8 @@ int	ft_get_default_color(int z, t_map *map)
 	unsigned int	max;
 
 	max = map->z_maximum - map->z_minimum;
+	printf("\nzmax = %i, zmin = %i, max = %i \n", map->z_maximum, \
+	map->z_minimum, max);
 	if (max == 0)
 		return (0xFFFFFF);
 	percent = ((double)(z - map->z_minimum) / max);
