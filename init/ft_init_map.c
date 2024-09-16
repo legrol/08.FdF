@@ -97,11 +97,7 @@ static void	ft_fill_row(t_map *map, char **split_line, int row)
 			return ;
 		}
 		map->superarray[row][j][0] = ft_atoi(split_line[j]);
-	//	map->superarray[row][j][1] = 0xffffff;
 		ft_check_commas(split_line[j], map, row, j);		
-	//	printf("j =%i, z0 = %i, z1 = %i\n", j, \
-	//	map->superarray[row][j][0], map->superarray[row][j][1]);
-	//  map->superarray[row][j][1] = 0x423658;
 		j++;
 	}
 }
@@ -144,6 +140,7 @@ static void	ft_fill_superarray(t_map *map, int fd)
 		i++;
 	}
 }
+
 t_map	*ft_init_map(char *argv)
 {
 	t_map	*map;
@@ -165,8 +162,6 @@ t_map	*ft_init_map(char *argv)
 		ft_manage_err(BDRED INIT_ERR YELLOW MALLOC_ERR RESET);
 	}
 	ft_fill_superarray(map, fd);
-	// map->z_maximum = 0;
-	// map->z_minimum = 0;
 	ft_collect_z_minmax(map);
 	close(fd);
 	return (map);

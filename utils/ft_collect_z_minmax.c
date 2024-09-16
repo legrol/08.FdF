@@ -27,8 +27,8 @@ void	ft_collect_z_minmax(t_map *map)
 
 	i = 0;
 	j = 0;
-	map->z_maximum = map->superarray[i][j][0];
-	map->z_minimum = map->superarray[i][j][0];
+	map->z_maximum = 0;
+	map->z_minimum = 0;
 	while (i < map->map_height)
 	{
 		j = 0;
