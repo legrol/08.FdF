@@ -6,7 +6,7 @@
 /*   By: rdel-olm <rdel-olm@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/13 10:26:23 by rdel-olm          #+#    #+#             */
-/*   Updated: 2024/09/15 01:57:55 by rdel-olm         ###   ########.fr       */
+/*   Updated: 2024/09/16 21:45:17 by rdel-olm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,9 @@
  * The function "ft_put_pixel" xxx
  * 
  * @param t_fdf *rol    xxx
- * @param int x         xxx
- * @param int y         xxx
- * @param int color     xxx
+ * @param int x         x coordinate of map
+ * @param int y         y coordinate of map
+ * @param int color     color of coordinate (x,y) of map.
  * 
  */
 

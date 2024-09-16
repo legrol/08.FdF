@@ -6,7 +6,7 @@
 /*   By: rdel-olm <rdel-olm@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/28 15:22:08 by rdel-olm          #+#    #+#             */
-/*   Updated: 2024/09/15 21:45:34 by rdel-olm         ###   ########.fr       */
+/*   Updated: 2024/09/16 21:25:02 by rdel-olm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,15 +17,18 @@
  * hexadecimal value (if it exists).
  * 
  * @param char *str		String to evaluate, where the values ​​are.
- * @param t_point *node Node structure where the extracted values ​​will be 
- * 						stored.
+ * @param t_map *map	map to read.
+ * @param int row		value of the row to examine.
+ * @param int j			value of position j of the row to be examined.
+ * 
  * 
  * The function static "ft_color_zcell" saves the hex value converted to dec 
  * in the treated node.
  * 
  * @param char *str		String to evaluate, where the values ​​are.
- * @param t_point *node Node structure where the extracted values ​​will be 
- * 						stored.
+ * @param t_map *map	map to read.
+ * @param int row		value of the row to examine.
+ * @param int j			value of position j of the row to be examined.
  * 
  * The function static "ft_htol" converts a hexadecimal number to long int.
  * 
@@ -48,7 +51,6 @@ static	unsigned int	ft_htol(char *str)
 	while (*str != '\0')
 	{
 		ptr = ft_strchr(hex_lower, *str);
-		printf("%s\n", ptr);
 		if (ptr == NULL)
 			ptr = ft_strchr(hex_upper, *str);
 		if (ptr == NULL)

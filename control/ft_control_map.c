@@ -6,7 +6,7 @@
 /*   By: rdel-olm <rdel-olm@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/29 11:13:13 by rdel-olm          #+#    #+#             */
-/*   Updated: 2024/09/05 22:06:26 by rdel-olm         ###   ########.fr       */
+/*   Updated: 2024/09/16 21:26:59 by rdel-olm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,6 @@
  * @param char **argv	name of the file to read, passed as arg[1].
  * @param t_map *map	map to read.
  * 
- * In the function "ft_process_lines" complements the main function to 
- * maintain the guideline of 25 lines per function.
- * 
- * @param int fd		fd of the file to read. 
- * @param t_map *map	map to read.
  * 
  */
 

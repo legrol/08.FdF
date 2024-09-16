@@ -6,17 +6,23 @@
 /*   By: rdel-olm <rdel-olm@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/14 10:52:10 by rdel-olm          #+#    #+#             */
-/*   Updated: 2024/09/15 20:41:45 by rdel-olm         ###   ########.fr       */
+/*   Updated: 2024/09/16 21:35:01 by rdel-olm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/fdf.h"
 
 /**
- * The function "ft_key_hook" xxx
+ * The function "ft_key_hook" keyboard event management.
  * 
- * @param mlx_key_data_t keydata    xxx
- * @param void *param               xxx
+ * Inside the if statement relative to action, you can add more keyboard 
+ * controls like moving the cam, rotating, etc.
+ * 
+ * @param mlx_key_data_t keydata	Contains information about the keyboard 
+ * 									event that has occurred.
+ * @param void *param				This pointer is cast to a pointer of type
+ * 									t_fdf to access the elements of the rol 
+ * 									structure.
  * 
  */
 

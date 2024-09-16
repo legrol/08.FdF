@@ -6,17 +6,17 @@
 /*   By: rdel-olm <rdel-olm@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/14 12:17:33 by rdel-olm          #+#    #+#             */
-/*   Updated: 2024/09/15 02:11:05 by rdel-olm         ###   ########.fr       */
+/*   Updated: 2024/09/16 21:09:26 by rdel-olm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/fdf.h"
 
 /**
- * The function "" xxx
+ * The function "ft_get_default_color" containing the value of the height.
  * 
- * @param int z			xxx
- * @param t_map *map	xxx
+ * @param int z			z coordinate value.
+ * @param t_map *map	map to read.
  * 
  */
 
@@ -26,8 +26,6 @@ int	ft_get_default_color(int z, t_map *map)
 	unsigned int	max;
 
 	max = map->z_maximum - map->z_minimum;
-	printf("\nzmax = %i, zmin = %i, max = %i \n", map->z_maximum, \
-	map->z_minimum, max);
 	if (max == 0)
 		return (0xFFFFFF);
 	percent = ((double)(z - map->z_minimum) / max);

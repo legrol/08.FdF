@@ -6,7 +6,7 @@
 /*   By: rdel-olm <rdel-olm@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/24 22:22:32 by rdel-olm          #+#    #+#             */
-/*   Updated: 2024/09/14 10:43:39 by rdel-olm         ###   ########.fr       */
+/*   Updated: 2024/09/16 21:16:06 by rdel-olm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,9 @@
  */
 # define DEFAULT_WIDTH			1920
 # define DEFAULT_HEIGHT			1080
-# define WIDTH					1920
-# define HEIGHT					1080
+# define WIDTH					1080
+# define HEIGHT					720
 
-# define DEFAULT_MENU_WIDTH		250
 # define M_PI					3.14159265358979323846
 
 # define INIT_ERR				"42FdF : ==> "

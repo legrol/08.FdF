@@ -59,13 +59,6 @@ INCLUDES_DIR		= ./includes
 MLX42_LIB			= ./MLX42/lib
 MLX42_INCLUDE		= ./MLX42/include/MLX42
 
-# ══ Bonus Directories ═══════════════════════════════════════════════════════ #
-#    -----------------                                                         #
-
-# SRC_BONUS_DIR		= ./checker_bonus/src_bonus
-# GNL_BONUS_DIR		= ./checker_bonus/gnl_bonus
-# INCLUDES_BONUS_DIR	= ./checker_bonus/includes_bonus
-
 # ══ Library Archives ════════════════════════════════════════════════════════ #
 #    ----------------                                                          #
 
@@ -150,18 +143,6 @@ OBJ_FRE				= $(patsubst ${FRE_DIR}/%.c, ${OBJ_DIR}/%.o, ${FRE})
 OBJ_PRP				= $(patsubst ${PERIPHERALS_DIR}/%.c, ${OBJ_DIR}/%.o, \
 						${PRP})
 
-# ══ Sources Bonus ═══════════════════════════════════════════════════════════ #
-#    -------------                                                             #
-
-# SRC_BONUS			= ${SRC_BONUS_DIR}/checker_bonus.c
-# GNL_BONUS			= ${GNL_BONUS_DIR}/get_next_line_bonus.c \
-# 						${GNL_BONUS_DIR}/get_next_line_utils_bonus.c
-
-# OBJ_SRC_BONUS		= $(patsubst ${SRC_BONUS_DIR}/%.c, ${OBJ_DIR}/%.o, \
-# 						${SRC_BONUS})
-# OBJ_GNL_BONUS		= $(patsubst ${GNL_BONUS_DIR}/%.c, ${OBJ_DIR}/%.o, \
-# 						${GNL_BONUS})
-
 # ═══ Rules ══════════════════════════════════════════════════════════════════ #
 #     -----                                                                    #
 
@@ -222,25 +203,6 @@ ftprintf:
 
 ftexamft:
 	@cd ${LIBRARIES}/${EXAMFT_DIR} ${MK_} all
-
-# bonus: ${NAME_BONUS}
-
-# ${NAME_BONUS}: ftlibft ftprintf ftexamft ${OBJ_ERR} ${OBJ_INT} \
-# 											${OBJ_MOV} ${OBJ_SRT} ${OBJ_UTL} \
-# 											${OBJ_SRC_BONUS} ${OBJ_GNL_BONUS}
-# 	@echo "$(YELLOW)Compiling root ...$(DEF_COLOR)"
-# 	@${CC} ${CFLAGS} ${IFLAGS} ${IFLAGS_BONUS} -o ${NAME_BONUS} \
-# 			${OBJ_ERR} ${OBJ_INT} ${OBJ_MOV} ${OBJ_SRT} ${OBJ_UTL} \
-# 			${OBJ_SRC_BONUS} ${OBJ_GNL_BONUS} ${LFLAGS} ${IFLAGS_BONUS}
-# 	@echo "$(GREEN) $(NAME_BONUS) all created ✓$(DEF_COLOR)"
-
-# ${OBJ_DIR}/%.o: ${SRC_BONUS_DIR}/%.c
-# 	@${MKD} $(dir $@)
-# 	@$(CC) ${CFLAGS} ${IFLAGS} -c $< -o $@
-
-# ${OBJ_DIR}/%.o: ${GNL_BONUS_DIR}/%.c
-# 	@${MKD} $(dir $@)
-# 	@$(CC) ${CFLAGS} ${IFLAGS} -c $< -o $@
 
 clean:
 	@echo "$(YELLOW)Removing object files ...$(DEF_COLOR)"

@@ -6,7 +6,7 @@
 /*   By: rdel-olm <rdel-olm@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/12 09:54:33 by rdel-olm          #+#    #+#             */
-/*   Updated: 2024/09/15 14:36:36 by rdel-olm         ###   ########.fr       */
+/*   Updated: 2024/09/16 21:14:39 by rdel-olm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 # include <unistd.h>		// for write...
 # include <stdlib.h>		// for typedef, malloc...
 # include <math.h>			// for PI, etc.
-# include <fcntl.h>			// for oprn, O_RDONLY, etc.
+# include <fcntl.h>			// for open, O_RDONLY, etc.
 # include <stdio.h>			// for printf...
 
 // ============================================================================
@@ -114,6 +114,7 @@ int32_t		ft_ext_valid(char *map_name);
 
 t_cam		*ft_cam_init(t_fdf	*rol);
 void		ft_draw(t_map *map, t_fdf *rol);
+void		ft_draw_line(t_point start, t_point end, t_fdf *rol);
 int			ft_get_color(int x, t_point s, t_point e, float factor);
 int			ft_get_default_color(int z, t_map *map);
 void		ft_manage_hook(t_fdf *rol);
@@ -130,8 +131,8 @@ void		ft_manage_err(const char *err);
 // Functions to release
 // ============================================================================
 void		ft_cleanup(t_map *map, char *line, char **split_line, int32_t row);
-void		ft_free_inner(int32_t **array, int32_t length);
 void		ft_free_fdf(t_fdf *rol);
+void		ft_free_inner(int32_t **array, int32_t length);
 void		ft_free_map(t_map *map);
 void		ft_free_split(char **split);
 void		ft_free_superarray(t_map *map, int32_t rows);
@@ -161,19 +162,5 @@ float		ft_revfracpart(float n);
 int32_t		ft_matrix_height(char *map_file);
 int32_t		ft_matrix_width(char *map_file);
 void		ft_swapping(int *a, int *b);
-
-//***********
-//lost
-int32_t		ft_manage_columns(int32_t map_columns, char *read_line, \
-char *map_line);
-void		ft_bresenham_step(int32_t *start, int32_t *error, int32_t \
-delta[2], int32_t sign[2]);
-
-// ***********
-//news
-
-int			get_default_color(int32_t z, t_map *map);
-void		ft_draw_line(t_point start, t_point end, t_fdf *rol);
-
 
 #endif

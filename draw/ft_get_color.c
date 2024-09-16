@@ -6,7 +6,7 @@
 /*   By: rdel-olm <rdel-olm@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/13 09:18:05 by rdel-olm          #+#    #+#             */
-/*   Updated: 2024/09/15 20:02:23 by rdel-olm         ###   ########.fr       */
+/*   Updated: 2024/09/16 21:32:34 by rdel-olm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,10 @@
 /**
  * The function "ft_get_color" xxx
  *
- * @param int x         xxx
- * @param t_point s     xxx
- * @param t_point e     xxx
- * @param float factor  xxx
+ * @param int x         x coordinate of start point.
+ * @param t_point s     start point.
+ * @param t_point e     end point.
+ * @param float factor  management of fractional part of y coordinate.
  *
  *
  * ft_lin_itp = function linear interpolation

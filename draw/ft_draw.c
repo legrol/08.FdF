@@ -6,10 +6,9 @@
 /*   By: rdel-olm <rdel-olm@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/12 09:52:12 by rdel-olm          #+#    #+#             */
-/*   Updated: 2024/09/14 12:13:20 by rdel-olm         ###   ########.fr       */
+/*   Updated: 2024/09/16 23:12:01 by rdel-olm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 
 #include "../includes/fdf.h"
 
@@ -21,35 +20,44 @@
  * @param t_fdf *rol 				rol instance created in fdf.c.
  *
  *
- * Thew function "ft_draw_grid" Loop through the map coordinates and call
- * ft_draw_horizvert to draw the lines.
+ * The function "src_draw_y" draws a vertical line (y-direction) between 
+ * two points.
+ * 
+ * @param int x						x coordinate of map
+ * @param int y						y coordinate of map
+ * @param t_fdf *rol				rol instance created in fdf.c.
+ * 
+ * 
+ * The function "src_draw_x" draws a horizontal line (x-direction) between 
+ * two points.
+ * 
+ * @param int x						x coordinate of map
+ * @param int y						y coordinate of map
+ * @param t_fdf *rol				rol instance created in fdf.c.
+ * 
+ * 
+ * The function "ft_draw_line" sets up the drawing of a line between two points,
+ * calculating the gradient and handling steepness and coordinate swapping.
  *
- * @param t_map *map 				map to read.
- * @param t_fdf *rol 				rol instance created in fdf.c.
- *
- * The function "ft_draw_horizvert" They handle the logic of drawing horizontal
- * and vertical lines.
- *
- * @param int x						x coordinate passed from ft_draw_grid.
- * @param int y						y coordinate passed from ft_draw_grid.
- * @param t_map *map				map to read.
+ * @param t_point s					start point.
+ * @param t_point e					end point.
  * @param t_fdf *rol				rol instance created in fdf.c.
  *
+ * 
+ * The function "ft_draw_line_loop" handles drawing the line pixel by pixel
+ * along the x-axis between two points (s and e) with anti-aliasing.
  *
- * The function "ft_draw_line" draw a line between two points.
- *
- * @param t_point s				sing point.
- * @param t_point e				final point.
- * @param t_fdf *rol				rol instance created in fdf.c.
- *
- *
- * The function "ft_draw_line_params" xxx
- *
- * @param t_point s				sing point.
- * @param t_point e				final point.
- * @param t_line_params *params		struct with data (delta, sign, error).
- *
- *
+ * @param t_point s  				start point.
+ * @param t_point e  				end point.
+ * @param float gradient  			Slope of the line (dy/dx).
+ * @param t_fdf *rol  				rol instance created in fdf.c.
+ * 
+ * 
+ * The function "ft_draw_instructions" displays the control instructions in 
+ * the window, providing the user with key bindings and controls.
+ * 
+ * @param t_fdf *rol  				rol instance created in fdf.c.
+ * 
  * 
  * ft_intpart function integer part
  * ft_fracpart function fractional part
@@ -130,24 +138,24 @@ void	ft_draw_line(t_point s, t_point e, t_fdf *rol)
 	ft_draw_line_loop(s, e, gradient, rol);
 }
 
-static void	src_draw_x(int x, int y, t_fdf *fdf)
+static void	src_draw_x(int x, int y, t_fdf *rol)
 {
 	t_point	p1;
 	t_point	p2;
 
-	p1 = project(x, y, fdf);
-	p2 = project(x + 1, y, fdf);
-	ft_draw_line(p1, p2, fdf);
+	p1 = project(x, y, rol);
+	p2 = project(x + 1, y, rol);
+	ft_draw_line(p1, p2, rol);
 }
 
-static void	src_draw_y(int x, int y, t_fdf *fdf)
+static void	src_draw_y(int x, int y, t_fdf *rol)
 {
 	t_point	p1;
 	t_point	p2;
 
-	p1 = project(x, y, fdf);
-	p2 = project(x, y + 1, fdf);
-	ft_draw_line(p1, p2, fdf);
+	p1 = project(x, y, rol);
+	p2 = project(x, y + 1, rol);
+	ft_draw_line(p1, p2, rol);
 }
 
 void	ft_draw(t_map *map, t_fdf *rol)
