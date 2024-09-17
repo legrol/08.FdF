@@ -44,6 +44,6 @@ void	ft_free_map(t_map *map)
 			i++;
 		}
 		free(map->superarray);
-		map->superarray = NULL;
+		free(map);
 	}
 }
