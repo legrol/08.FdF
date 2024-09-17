@@ -36,9 +36,6 @@ int32_t	main(int argc, char **argv)
 	ft_manage_hook(rol);
 	ft_draw(rol->map, rol);
 	mlx_loop(rol->mlx);
-	//mlx_delete_image(rol->mlx, rol->img);
 	mlx_terminate(rol->mlx);
-	// ft_free_map(map);
-	// ft_free_fdf(rol); 
 	return (0);
 }

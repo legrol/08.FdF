@@ -28,7 +28,21 @@
  * @param t_fdf *rol		rol instance created in fdf.c.
  * 
  *  
+ * The function "init_points" xxx
+ * 
+ * @param t_point *p1 xxx 
+ * 
+ * 
  */
+
+static void	ft_init_points(t_point *p1)
+{
+	p1->x = 0;
+	p1->y = 0;
+	p1->z = 0;
+	p1->color = 0xFFFFFF;
+	p1->reverse = 0;
+}
 
 t_point	ft_project(int32_t x, int32_t y, t_fdf *rol)
 {
@@ -37,6 +51,7 @@ t_point	ft_project(int32_t x, int32_t y, t_fdf *rol)
 	int		x_new;
 	int		y_new;
 
+	ft_init_points(&point);
 	z = rol->map->superarray[y][x][0];
 	point.x = (x - rol->map->map_width / 2) * rol->cam->zoom;
 	point.y = (y - rol->map->map_height / 2) * rol->cam->zoom;

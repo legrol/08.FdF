@@ -83,7 +83,7 @@ static void	ft_read_map_dimensions(t_map *map, int fd)
 	lseek(fd, 0, SEEK_SET);
 }
 
-static void	ft_fill_row(t_map *map, char **split_line, int row)
+static int	ft_fill_row(t_map *map, char **split_line, int row)
 {
 	int	j;
 
@@ -94,12 +94,13 @@ static void	ft_fill_row(t_map *map, char **split_line, int row)
 		if (!map->superarray[row][j])
 		{
 			ft_free_inner(map->superarray[row], j);
-			return ;
+			return (0);
 		}
 		map->superarray[row][j][0] = ft_atoi(split_line[j]);
 		ft_check_commas(split_line[j], map, row, j);		
 		j++;
 	}
+	return (1);
 }
 
 static int	ft_allocate_row(t_map *map, int i, char *line)
@@ -108,14 +109,23 @@ static int	ft_allocate_row(t_map *map, int i, char *line)
 
 	map->superarray[i] = (int **)malloc(map->map_width * sizeof(int *));
 	if (!map->superarray[i])
+	{
+		ft_free_superarray(map, i);
 		return (0);
+	}
 	split_line = ft_split(line, ' ');
 	if (!split_line)
 	{
 		free(map->superarray[i]);
+		ft_free_superarray(map, i);
 		return (0);
 	}
-	ft_fill_row(map, split_line, i);
+	if (!ft_fill_row(map, split_line, i))
+	{
+		ft_free_split(split_line);
+		ft_free_superarray(map, i);
+		return (0);
+	}
 	ft_free_split(split_line);
 	return (1);
 }
