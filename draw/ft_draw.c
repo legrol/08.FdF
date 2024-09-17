@@ -92,7 +92,6 @@ static int	ft_check_and_adjust_points(t_point *s, t_point *e, t_fdf *rol)
 	(e->x < 0 || e->x >= rol->win_width || e->y < 0 || e->y >= \
 		rol->win_height))
 		return (0);
-
 	rol->steep = ft_absolute(e->y - s->y) > ft_absolute(e->x - s->x);
 	if (rol->steep)
 	{

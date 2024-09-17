@@ -167,5 +167,4 @@ int32_t		ft_matrix_height(char *map_file);
 int32_t		ft_matrix_width(char *map_file);
 void		ft_swapping(int *a, int *b);
 
-
 #endif

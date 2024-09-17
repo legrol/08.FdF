@@ -97,7 +97,7 @@ static int	ft_fill_row(t_map *map, char **split_line, int row)
 			return (0);
 		}
 		map->superarray[row][j][0] = ft_atoi(split_line[j]);
-		ft_check_commas(split_line[j], map, row, j);		
+		ft_check_commas(split_line[j], map, row, j);
 		j++;
 	}
 	return (1);

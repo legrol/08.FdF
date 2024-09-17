@@ -37,6 +37,12 @@ char	*ft_strchr1(const char *s, int c)
 	return (0);
 }
 
+static void	ft_free(char *buffer_readed, char *buffer_print)
+{
+	free(buffer_readed);
+	free(buffer_print);
+}
+
 static char	*manage_readed_line(char	*treat_line)
 {
 	char	*new_buffer_print;	
@@ -70,9 +76,9 @@ static char	*read_fill_line(int fd, char *buffer_readed, char *buffer_print)
 	while (bytes_readed > 0)
 	{
 		bytes_readed = read(fd, buffer_readed, BUFFER_SIZE);
-		if (bytes_readed < 0){
-			free(buffer_readed);
-			free(buffer_print); 
+		if (bytes_readed < 0)
+		{
+			ft_free(buffer_readed, buffer_print);
 			return (NULL);
 		}
 		else if (bytes_readed == 0)
