@@ -14,7 +14,7 @@
 
 /**
  * 
- * The function "ft_project_iso" Isometric projection to convert 3D coordinates
+ * The function "ft_project" Isometric projection to convert 3D coordinates
  * to 2D.
  * 
  * ang_x and ang_y are angs for the isometric projection (examples).
@@ -30,10 +30,10 @@
  *  
  */
 
-t_point	project(int x, int y, t_fdf *rol)
+t_point	ft_project(int32_t x, int32_t y, t_fdf *rol)
 {
 	t_point	point;
-	int		z;
+	int32_t	z;
 	int		x_new;
 	int		y_new;
 

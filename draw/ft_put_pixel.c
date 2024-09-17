@@ -15,7 +15,7 @@
 /**
  * The function "ft_put_pixel" xxx
  * 
- * @param t_fdf *rol    xxx
+ * @param t_fdf *rol    rol instance created in fdf.c.
  * @param int x         x coordinate of map
  * @param int y         y coordinate of map
  * @param int color     color of coordinate (x,y) of map.

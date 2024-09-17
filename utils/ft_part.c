@@ -13,18 +13,24 @@
 #include "../includes/fdf.h"
 
 /**
- * The function "ft_intpart" xxx
+ * The function "ft_intpart" returns the integer part of a floating-point 
+ * number.
  * 
- * @param
+ * @param float n	The float number whose integer part is to be obtained.
  * 
  * 
- * The function "ft_fracpart" xxx
+ * The function "ft_fracpart" returns the fractional part of a floating-point
+ * number.
  * 
- * @param
+ * @param float n	The float number whose integer part is to be obtained.
  * 
- * The function "ft_revfracpart" xxx
  * 
- * @param
+ * The function "ft_revfracpart" returns the inverse fractional part of a 
+ * number.
+ * That is, how much further the number is from reaching the next integer.
+ * 
+ * @param float n	The float number whose integer part is to be obtained.
+ * 
  * 
  * 
  * ft_intpart function integer part

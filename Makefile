@@ -107,7 +107,8 @@ UTL					= ${UTILS_DIR}/ft_absolute.c \
 						${UTILS_DIR}/ft_swapping.c \
 						${UTILS_DIR}/ft_part.c
 
-PRP					= ${PERIPHERALS_DIR}/ft_keyboard.c
+PRP					= ${PERIPHERALS_DIR}/ft_keyboard.c \
+						${PERIPHERALS_DIR}/ft_keyboard_bis.c
 
 CTL					= ${CONTROL_DIR}/ft_check_commas.c \
 						${CONTROL_DIR}/ft_control_args.c \
@@ -116,6 +117,7 @@ CTL					= ${CONTROL_DIR}/ft_check_commas.c \
 						${CONTROL_DIR}/ft_ext_valid.c
 
 DRW					= ${DRAW_DIR}/ft_cam_init.c \
+						${DRAW_DIR}/ft_draw_tool.c \
 						${DRAW_DIR}/ft_draw.c \
 						${DRAW_DIR}/ft_get_color.c \
 						${DRAW_DIR}/ft_get_default_color.c \

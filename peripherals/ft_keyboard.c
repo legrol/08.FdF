@@ -24,6 +24,40 @@
  * 									t_fdf to access the elements of the rol 
  * 									structure.
  * 
+ * 
+ * The function "ft_translate_img" allows you to move the image in the window 
+ * using the arrow keys. Modifies the displacement in X or Y.
+ * 
+ * @param int key					code of the key pressed.
+ * @param t_fdf *rol				rol instance created in fdf.c.
+ * 
+ * 
+ * The function "ft_mod_height" Changes the Z height of the projection based 
+ * on the +/- keys on the numeric keypad. The minimum height is 0.1 and the 
+ * maximum is 10.
+ * 
+ * @param int key					code of the key pressed.
+ * @param t_fdf *rol				rol instance created in fdf.c.
+ * 
+ *  
+ * The function "ft_reset" resets the camera values ​​to their default 
+ * settings, centering it in the window and adjusting its angles and zoom.
+ * It also resets the rotation angles based on the projection mode (isometric 
+ * or not).
+ * 
+ * @param t_fdf *rol				rol instance created in fdf.c.
+ * 
+ * 
+ * The function "ft_move_zoom" to increase or decrease the camera zoom based 
+ * on the W and S keys.
+ * 
+ * @param mlx_key_data_t keydata	Contains information about the keyboard 
+ * 									event that has occurred.
+ * @param void *param				This pointer is cast to a pointer of type
+ * 									t_fdf to access the elements of the rol 
+ * 									structure.
+ * 
+ * 
  */
 
 static void	ft_move_zoom(mlx_key_data_t keydata, void *param)
@@ -59,23 +93,6 @@ static void	ft_reset(t_fdf *rol)
 	rol->cam->z_height = 1.0;
 	rol->cam->zoom = ft_get_min(DEFAULT_WIDTH / rol->map->map_width / 2,
 			DEFAULT_HEIGHT / rol->map->map_height / 2);
-}
-
-static void	ft_toggle_projection(t_fdf *rol)
-{
-	if (rol->cam->iso)
-	{
-		rol->cam->x_ang = -0.523599;
-		rol->cam->y_ang = -0.261799;
-		rol->cam->z_ang = 0;
-	}
-	else
-	{
-		rol->cam->x_ang = -0.615472907;
-		rol->cam->y_ang = -0.523599;
-		rol->cam->z_ang = 0.615472907;
-	}
-	rol->cam->iso = !rol->cam->iso;
 }
 
 static void	ft_mod_height(int key, t_fdf *rol)

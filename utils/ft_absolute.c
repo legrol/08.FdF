@@ -13,9 +13,10 @@
 #include "../includes/fdf.h"
 
 /**
- * The function "ft_absolute" xxx
+ * The function "ft_absolute" gets the absolute value of the parameter.
  * 
- * @param float n   xxx
+ * @param float n   floating point number that must be processed to obtain its
+ * absolute value.
  * 
  */
 

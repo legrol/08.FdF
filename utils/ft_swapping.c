@@ -13,10 +13,11 @@
 #include "../includes/fdf.h"
 
 /**
- * The function "ft_swap" xxx.
+ * The function "ft_swap" exchanges the values ​​contained in variables a 
+ * and b.
  * 
- * @param uint32_t *a   xxx
- * @param uint32_t *b   xxx
+ * @param uint32_t *a   variable a, to be inserted into variable b.
+ * @param uint32_t *b   variable b, to be inserted into variable a.
  * 
  */
 

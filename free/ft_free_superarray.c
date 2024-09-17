@@ -16,7 +16,7 @@
  * The function "ft_free_superarray" to release triple pointer superray.
  * 
  * @param t_map *map    map to read.
- * @param int32_t rows The index up to which rows in the superarray have been 
+ * @param int32_t rows  The index up to which rows in the superarray have been 
  * 						allocated and may need cleaning. 
  *                      This allows the function to free all rows up to 'row' 
  * 						to handle partial constructions of the superarray.

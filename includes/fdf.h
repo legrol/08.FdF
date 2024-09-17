@@ -114,13 +114,16 @@ int32_t		ft_ext_valid(char *map_name);
 
 t_cam		*ft_cam_init(t_fdf	*rol);
 void		ft_draw(t_map *map, t_fdf *rol);
+void		ft_draw_instructions(t_fdf *rol);
 void		ft_draw_line(t_point start, t_point end, t_fdf *rol);
 int			ft_get_color(int x, t_point s, t_point e, float factor);
 int			ft_get_default_color(int z, t_map *map);
 void		ft_manage_hook(t_fdf *rol);
-t_point		project(int32_t x, int32_t y, t_fdf *rol);
+t_point		ft_project(int32_t x, int32_t y, t_fdf *rol);
 void		ft_put_pixel(t_fdf *rol, int x, int y, int color);
 double		ft_reset_angles(double *angle);
+void		ft_src_draw_x(int x, int y, t_fdf *rol);
+void		ft_src_draw_y(int x, int y, t_fdf *rol);
 
 // ============================================================================
 // Management errors
@@ -147,6 +150,7 @@ t_fdf		*ft_init(const char *filepath);
 // Peripherals
 // ============================================================================
 void		ft_key_hook(mlx_key_data_t keydata, void *param);
+void		ft_toggle_projection(t_fdf *rol);
 
 // ============================================================================
 // Several functions
@@ -162,5 +166,6 @@ float		ft_revfracpart(float n);
 int32_t		ft_matrix_height(char *map_file);
 int32_t		ft_matrix_width(char *map_file);
 void		ft_swapping(int *a, int *b);
+
 
 #endif
