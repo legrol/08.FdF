@@ -28,9 +28,10 @@
  * @param t_fdf *rol		rol instance created in fdf.c.
  * 
  *  
- * The function "init_points" xxx
+ * The function "init_points" Initializes all parameters relative to a 
+ * point (x,y) on the screen.
  * 
- * @param t_point *p1 xxx 
+ * @param t_point *p1 point to initialize. 
  * 
  * 
  */
