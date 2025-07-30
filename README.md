@@ -40,7 +40,7 @@
 
 - Para ejecutar el programa principal:
 
-        ```bash
+```bash
         ./fdf maps/example.fdf
 ```
 
