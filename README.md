@@ -40,23 +40,25 @@
 
 - Para ejecutar el programa principal:
 
-  - ./fdf maps/example.fdf
+```bash
+./fdf maps/example.fdf
+```
 
 - Controles por teclado:
 
-    -  Flechas '← ↑ → ↓' => Mover la vista.
+    -  Flechas `←` `↑` `→` `↓` => Mover la vista.
 
-    -  ´+ / -´ => Zoom in / out.
+    -  `+` / `-` => Zoom in / out.
 
-    -  ´W / S´ => Rotar en X.
+    -  `W` / `S` => Rotar en X.
 
-    -  ´A / D´ => Rotar en Y.
+    -  `A` / `D` => Rotar en Y.
 
-    -  ´Q / E´ => Rotar en Z.
+    -  `Q` / `E` => Rotar en Z.
 
-    -  ´R´ => Resetear vista.
+    -  `R` => Resetear vista.
 
-    -  ´ESC´ => Cerrar la ventana y salir.
+    -  `ESC` => Cerrar la ventana y salir.
 
 
 ![Autor](https://img.shields.io/badge/Autor-red?style=for-the-badge)
