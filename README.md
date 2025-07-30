@@ -46,7 +46,7 @@
 
     -  Flechas ← ↑ → ↓ — Mover la vista.
 
-    -  '' / - => Zoom in / out.
+    -  '+ / - => Zoom in / out.
 
     -  W / S => Rotar en X.
 
