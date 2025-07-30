@@ -40,9 +40,9 @@
 
 - Para ejecutar el programa principal:
 
-```bash
-./fdf maps/example.fdf
-```
+    ```bash
+    ./fdf maps/example.fdf
+    ```
 
 - Controles por teclado:
 
@@ -60,6 +60,7 @@
 
     -  `ESC` => Cerrar la ventana y salir.
 
+&nbsp;&nbsp;&nbsp;&nbsp;
 
 ![Autor](https://img.shields.io/badge/Autor-red?style=for-the-badge)
 
