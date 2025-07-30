@@ -44,7 +44,7 @@
 
 - Controles por teclado:
 
-    -  Flechas `← ↑ → ↓´ => Mover la vista.
+    -  Flechas '← ↑ → ↓' => Mover la vista.
 
     -  ´+ / -´ => Zoom in / out.
 
