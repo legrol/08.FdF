@@ -41,7 +41,7 @@
 - Para ejecutar el programa principal:
 
 ```bash
-./fdf maps/example.fdf
+    ./fdf maps/example.fdf
 ```
 
 - Controles por teclado:
