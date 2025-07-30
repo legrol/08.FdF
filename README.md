@@ -40,9 +40,9 @@
 
 - Para ejecutar el programa principal:
 
-        ```bash
-        ./fdf maps/example.fdf
-        ```
+```bash
+./fdf maps/example.fdf
+```
 
 - Controles por teclado:
 
