@@ -46,17 +46,17 @@
 
     -  Flechas ← ↑ → ↓ — Mover la vista.
 
-    -  + / - — Zoom in / out.
+    -  '' / - => Zoom in / out.
 
-    -  W / S — Rotar en X.
+    -  W / S => Rotar en X.
 
-    -  A / D — Rotar en Y.
+    -  A / D => Rotar en Y.
 
-    -  Q / E — Rotar en Z.
+    -  Q / E => Rotar en Z.
 
-    -  R — Resetear vista.
+    -  R => Resetear vista.
 
-    -  ESC — Cerrar la ventana y salir.
+    -  ESC => Cerrar la ventana y salir.
 
 
 ![Autor](https://img.shields.io/badge/Autor-red?style=for-the-badge)
