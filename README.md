@@ -1,6 +1,6 @@
 ![Descripción](https://img.shields.io/badge/Descripción-blue?style=for-the-badge)
 
-- Visualizador de mapas en 3D proyectados en isométrico, basado en la librería MiniLibX de 42.  
+- Visualizador de mapas en 3D proyectados en isométrico, basado en la librería MiniLibX de 42 (MLX42).  
 - Lee archivos de mapa (`*.fdf`) con una malla de alturas (enteros).  
 - Dibuja una representación de alambre (wireframe) en ventana gráfica.  
 - Permite rotar, mover y hacer zoom en tiempo real para explorar la malla.  
