@@ -60,9 +60,8 @@
 
     -  `ESC` => Cerrar la ventana y salir.
 
-&nbsp;&nbsp;&nbsp;&nbsp;
 
-![Vista del proyecto](https://img.shields.io/badge/Vista-del-proyecto-magenta?style=for-the-badge)
+![Vista del proyecto](https://img.shields.io/badge/Vista_del_proyecto-magenta?style=for-the-badge)
 
 <p align="center">
   <img src="imgReadme/Img1.png" alt="Vista del proyecto" width="500"/>
