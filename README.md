@@ -64,7 +64,9 @@
 
 ![Vista del proyecto](https://img.shields.io/badge/Vista-del-proyecto-magenta?style=for-the-badge)
 
-![Vista](imgReadme/Img1.png)
+<p align="center">
+  <img src="imgReadme/Img1.png" alt="Vista del proyecto" width="500"/>
+</p>
 
 ![Autor](https://img.shields.io/badge/Autor-red?style=for-the-badge)
 
