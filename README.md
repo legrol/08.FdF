@@ -66,6 +66,12 @@
 <p align="center">
   <img src="imgReadme/Img1.png" alt="Vista del proyecto" width="650"/>
 </p>
+<p align="center">
+  <![Demo](https://img.shields.io/badge/Demo-del-proyecto-green?style=for-the-badge)
+
+🎥 Puedes descargar o abrir el vídeo de demostración:  
+👉 [Ver demo.webm](imgReadme/Vid1.webm)
+</p>
 
 ![Autor](https://img.shields.io/badge/Autor-red?style=for-the-badge)
 
