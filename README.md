@@ -63,6 +63,7 @@
 &nbsp;&nbsp;&nbsp;&nbsp;
 
 ![Vista del proyecto](https://img.shields.io/badge/Vista-del-proyecto-magenta?style=for-the-badge)
+
 ![Vista](imgReadme/Img1.png)
 
 ![Autor](https://img.shields.io/badge/Autor-red?style=for-the-badge)
